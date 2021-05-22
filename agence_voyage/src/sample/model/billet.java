@@ -43,10 +43,10 @@ public double getMontant() {
 public void setMontant(double montant) {
 	this.montant = montant;
 }
-public Date getDate_vente() {
+public LocalDate getDate_vente() {
 	return date_vente;
 }
-public void setDate_vente(Date date_vente) {
+public void setDate_vente(LocalDate date_vente) {
 	this.date_vente = date_vente;
 }
 public String getMode_paiement() {

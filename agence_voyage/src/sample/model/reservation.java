@@ -30,10 +30,10 @@ public class reservation {
 	public void setNbr_places(int nbr_places) {
 		this.nbr_places = nbr_places;
 	}
-	public Date getDate_res() {
+	public LocalDate getDate_res() {
 		return date_res;
 	}
-	public void setDate_res(Date date_res) {
+	public void setDate_res(LocalDate date_res) {
 		this.date_res = date_res;
 	}
 	public int getNum_billet() {
