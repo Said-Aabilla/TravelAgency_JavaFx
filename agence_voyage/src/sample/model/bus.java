@@ -3,6 +3,7 @@ package sample.model;
 
 public class bus {
 	private int id_bus;
+	private String image_bus;
 	private String nom_bus;
 	private String immatriculation;
 	private int id_ch;
@@ -11,9 +12,10 @@ public class bus {
 	public bus() {
 	}
 	
-	public bus(int id_bus, String nom_bus, String immatriculation, int id_ch, int num_cb) {
+	public bus(int id_bus, String image_bus,String nom_bus, String immatriculation, int id_ch, int num_cb) {
 
 		this.id_bus = id_bus;
+		this.image_bus=image_bus;
 		this.nom_bus = nom_bus;
 		this.immatriculation = immatriculation;
 		this.id_ch = id_ch;
@@ -50,6 +52,14 @@ public class bus {
 	}
 	public void setNum_cb(int num_cb) {
 		this.num_cb = num_cb;
+	}
+
+	public String getImage_bus() {
+		return image_bus;
+	}
+
+	public void setImage_bus(String image_bus) {
+		this.image_bus = image_bus;
 	}
 	
 	

@@ -4,10 +4,11 @@ public class Client extends User  {
 	 
 	private int id_client;
 	private String nom_client;
+	private String cin;
 	private String prenom_client;
 	private String adresse_client;
 	private String tel_client;
-	private int cp_client;
+	private String cp_client;
 	private int id_user;
 	
 	
@@ -23,7 +24,7 @@ public class Client extends User  {
 
 
 	public Client(int id_user, String email_user, String password_user, int id_client, String nom_client,
-			String prenom_client, String adresse_client, String tel_client, int cp_client, int id_user2) {
+				  String prenom_client, String adresse_client, String tel_client, String cp_client, int id_user2, String cin) {
 		super(id_user, email_user, password_user);
 		this.id_client = id_client;
 		this.nom_client = nom_client;
@@ -31,6 +32,7 @@ public class Client extends User  {
 		this.adresse_client = adresse_client;
 		this.tel_client = tel_client;
 		this.cp_client = cp_client;
+		this.cin = cin;
 		id_user = id_user2;
 	}
 
@@ -85,12 +87,12 @@ public class Client extends User  {
 	}
 
 
-	public int getCp_client() {
+	public String getCp_client() {
 		return cp_client;
 	}
 
 
-	public void setCp_client(int cp_client) {
+	public void setCp_client(String cp_client) {
 		this.cp_client = cp_client;
 	}
 
@@ -103,10 +105,13 @@ public class Client extends User  {
 	public void setId_user(int id_user) {
 		this.id_user = id_user;
 	}
-	
-	
- 
 
 
+	public String getCin() {
+		return cin;
+	}
 
+	public void setCin(String cin) {
+		this.cin = cin;
+	}
 }

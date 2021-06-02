@@ -5,7 +5,7 @@ public class User {
 	private int id_user;
 	private String email_user;
 	private String password_user;
-
+	public static int us;
 	public User(int id_user, String email_user, String password_user) {
 		super();
 		this.id_user = id_user;
@@ -34,7 +34,7 @@ public class User {
 	}
 
 	public String getPassword_user() {
-		return password_user;
+		return this.password_user;
 	}
 
 	public void setPassword_user(String password_user) {

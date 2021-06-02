@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane prefHeight="360.0" prefWidth="501.0">
+            <children>
+                <Label layoutX="148.0" layoutY="35.0" prefHeight="53.0" prefWidth="205.0" text="Login System" textAlignment="CENTER" wrapText="true">
+                    <font>
+                        <Font name="Bernhard Modern Bold Italic BT" size="31.0" />
+                    </font>
+                </Label>
+                <JFXPasswordField fx:id="password" labelFloat="true" layoutX="130.0" layoutY="209.0" maxWidth="241.0" minWidth="232.0" prefHeight="35.0" prefWidth="241.0" promptText="Password" unFocusColor="#4a4949">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXPasswordField>
+                <JFXTextField fx:id="email" labelFloat="true" layoutX="130.0" layoutY="142.0" maxWidth="241.0" minWidth="181.0" prefHeight="38.0" prefWidth="241.0" promptText="email">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+               <rotationAxis>
+                  <Point3D y="1.0" />
+               </rotationAxis>
+                </JFXTextField>
+                <JFXButton fx:id="loginButton" layoutX="196.0" layoutY="281.0" mnemonicParsing="false" onAction="#setLoginButton" onMouseClicked="#setLoginButton" prefHeight="47.0" prefWidth="108.0" ripplerFill="#4a32c7c4" style="-fx-background-color: green; -fx-background-radius: 10px;" text="Login" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+            <Button fx:id="cr" layoutX="78.0" layoutY="292.0" mnemonicParsing="false" onAction="#redirect" text="Button" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
