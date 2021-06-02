@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="415.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.VoyageController">
+   <children>
+      <Pane layoutX="248.0" layoutY="34.0" prefHeight="45.0" prefWidth="684.0" style="-fx-background-color: #e06100;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label layoutX="22.0" layoutY="14.0" text="Rechercher Par :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_ville" layoutX="158.0" layoutY="8.0" promptText="Ville...." style="-fx-background-color: transparent; -fx-border-color: #fff; -fx-border-width: 0px 0px 2px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Separator layoutX="393.0" layoutY="2.0" orientation="VERTICAL" prefHeight="45.0" prefWidth="7.0" />
+            <TextField fx:id="txt_date" layoutX="447.0" layoutY="8.0" promptText="Date..." style="-fx-background-color: transparent; -fx-border-color: #fff; -fx-border-width: 0px 0px 2px;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="chercher_voyage" layoutX="716.0" layoutY="10.0" mnemonicParsing="false" onAction="#chercher_voyage_click" style="-fx-background-color: #fff; -fx-background-radius: 5em;" text="Chercher" textFill="#e06100">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TextField fx:id="txt_id_bus" layoutX="28.0" layoutY="98.0" promptText="ID BUS " style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="98.0" />
+      <TextField fx:id="txt_vd_voyage" layoutX="38.0" layoutY="108.0" promptText="VILLE DEPART" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="300.0" />
+      <TextField fx:id="txt_ha_voyage" layoutX="48.0" layoutY="258.0" promptText="HEURE ARRIVE" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="260.0" />
+      <TextField fx:id="txt_hd_voyage" layoutX="38.0" layoutY="108.0" promptText="HEURE DEPART" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="220.0" />
+      <TextField fx:id="txt_da_voyage" layoutX="38.0" layoutY="108.0" promptText="DATE ARRIVE" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="180.0" />
+      <TextField fx:id="txt_dd_voyage" layoutX="38.0" layoutY="108.0" promptText="DATE DEPART" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="140.0" />
+      <TextField fx:id="txt_va_voyage" layoutX="48.0" layoutY="118.0" promptText="VILLE ARRIVE" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="340.0" />
+      <TableView fx:id="table_voyage" layoutX="221.0" layoutY="80.0" onMouseClicked="#select" prefHeight="290.0" prefWidth="318.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="80.0">
+        <columns>
+          <TableColumn fx:id="id_col_voyage" prefWidth="75.0" text="ID Voyage" />
+          <TableColumn fx:id="dd_col_voyage" prefWidth="75.0" text="DATE DEPART" />
+            <TableColumn fx:id="da_col_voyage" prefWidth="75.0" text="DATE ARRIVE" />
+            <TableColumn fx:id="hd_col_voyage" prefWidth="75.0" text="HEURE DEPART" />
+            <TableColumn fx:id="ha_col_voyage" prefWidth="75.0" text="HEURE ARRIVE" />
+            <TableColumn fx:id="vp_col_voyage" prefWidth="75.0" text="VILLE DEPART" />
+            <TableColumn fx:id="va_col_voyage" prefWidth="75.0" text="VILLE ARRIVE" />
+        </columns>
+      </TableView>
+      <Button fx:id="ajouter_voyage" layoutX="563.0" layoutY="99.0" mnemonicParsing="false" onAction="#ajouter_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkblue;" text="Ajouter" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier_voyage" layoutX="573.0" layoutY="109.0" mnemonicParsing="false" onAction="#modifier_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkgreen;" text="Modifier" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="160.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="supprimer_voyage" layoutX="583.0" layoutY="119.0" mnemonicParsing="false" onAction="#supprimer_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkred;" text="Supprimer" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="200.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

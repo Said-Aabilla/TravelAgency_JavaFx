@@ -28,7 +28,7 @@ public class confirmadmin {
         if(DatabaseHandler.confirmadm(mat)) {
             confirm.getScene().getWindow().hide();
             Stage dashboardStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../view/test.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../view/AdminMain.fxml"));
             Scene scene = new Scene(root, 800, 700);
             dashboardStage.setScene(scene);
             dashboardStage.show();

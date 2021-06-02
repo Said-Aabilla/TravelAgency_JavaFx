@@ -4,10 +4,13 @@ package sample.controller;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.fxml.FXMLLoader;
-        import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
         import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
-        import java.io.IOException;
+import java.io.IOException;
 
  public class DashboardCl {
 
@@ -16,6 +19,20 @@ package sample.controller;
 
     @FXML
     private AnchorPane window;
+    
+    @FXML
+    private Button logout1;
+    
+    @FXML
+    void LogOut(ActionEvent event) throws IOException {
+    	  logout1.getScene().getWindow().hide();
+          Stage dashboardStage = new Stage();
+          Parent root = FXMLLoader.load(getClass().getResource("../view/login_.fxml"));
+          Scene scene = new Scene(root,800, 700);
+          dashboardStage.setScene(scene);
+          dashboardStage.show();
+
+    }
 
     @FXML
     void profile(ActionEvent event) throws IOException {

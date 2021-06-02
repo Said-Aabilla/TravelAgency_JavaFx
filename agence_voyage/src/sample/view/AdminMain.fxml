@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="105.0" prefHeight="500.0" prefWidth="216.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="8.0" layoutY="7.0" prefHeight="86.0" prefWidth="216.0" style="-fx-background-color: #e06100;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="58.0" layoutY="26.0" text="Agence de Voyage" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Button alignment="BASELINE_LEFT" layoutX="20.0" layoutY="128.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Accueil" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="128.0">
+               
+            </Button>
+            <Button fx:id="voyage_manage" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="178.0" mnemonicParsing="false" onAction="#voyage_manage_clicked" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Les Voyages" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="178.0">
+              
+            </Button>
+            <Button fx:id="chauffeur_manage" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="228.0" mnemonicParsing="false" onAction="#chauffeur_manage_clicked" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Les chauffeurs" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="228.0">
+              
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="20.0" layoutY="278.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Les Reservations" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="278.0">
+               
+            </Button>
+            <Button fx:id="bus_manage" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="328.0" mnemonicParsing="false" onAction="#bus_manage_clicked" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Les Bus" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="328.0">
+             
+            </Button>
+            <Button fx:id="logout" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="415.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Logout" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="415.0">
+               
+            </Button>
+            <Button fx:id="hotel_manage" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="374.0" mnemonicParsing="false" onAction="#hotel_manage_clicked" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Hotels" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="374.0">
+              
+            </Button>
+            <Separator layoutX="2.0" layoutY="85.0" prefHeight="3.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="219.0" layoutY="-28.0" prefHeight="86.0" prefWidth="684.0" style="-fx-background-color: #000;" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="58.0" fitWidth="116.0" layoutX="548.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="395.0" layoutY="35.0" text="Nom de l'utilisateur" textFill="WHITE" />
+         </children>
+      </Pane>
+      <AnchorPane fx:id="window" layoutX="217.0" layoutY="86.0" prefHeight="414.0" prefWidth="684.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="86.0" />
+   </children>
+</AnchorPane>

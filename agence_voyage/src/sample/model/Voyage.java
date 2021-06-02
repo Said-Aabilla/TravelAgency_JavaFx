@@ -25,7 +25,10 @@ public class Voyage {
     private String ville_depart;
     private String ville_arrive;
     public static ObservableList<voyage_info> list ;
-
+    public Voyage(int id_voyage) {
+		super();
+		this.id_voyage = id_voyage;
+	}
     public int getId_voyage() {
         return id_voyage;
     }
@@ -122,6 +125,19 @@ public class Voyage {
 
     }
 
+    public ObservableList<Voyage> get_voyage1(String text1 , String text2) throws SQLException{
+		  connectionDB con=new connectionDB();
+	      Connection connection=con.getConnection();
+	      String sql = "select * from voyages where (ville_depart like'%"+text1+"%' or ville_arrive like '%"+text1+"%') and(date_debut  like'%"+text2+"%' or date_fin like '%"+text2+"%')";
+	      Statement stm=connection.createStatement();
+	      ResultSet rs = stm.executeQuery(sql);
+	      ObservableList<Voyage> list = FXCollections.observableArrayList();
+	      while(rs.next()) {
+	    	  list.add(new Voyage(Integer.valueOf(rs.getString("id_voyage")),rs.getString("libelle_voyage"),rs.getString("date_debut"),
+	    			  rs.getString("date_fin"),rs.getString("heure_debut"),rs.getString("heure_fin"),Integer.valueOf(rs.getString("id_bus")),rs.getString("ville_depart"),rs.getString("ville_arrive")));
+	      }
+		  return list;
+	  }
 
     /* chercherDate d'un voyage */
     public ArrayList<Voyage> chercherDate(String date) throws SQLException {
@@ -152,7 +168,62 @@ public class Voyage {
     }
 
 
-    //endak tnssa hadi, zid liha string blast localdate
+	public int get_id_bus(int id_voyage) throws SQLException {
+		connectionDB con=new connectionDB();
+	      Connection connection=con.getConnection();
+	      String sql = "select* from voyages";
+	      Statement stm=connection.createStatement();
+	      ResultSet rs = stm.executeQuery(sql);
+	      int id=1;
+	      while(rs.next()) {
+	    	  id=Integer.valueOf(rs.getString("id_bus"));
+	      }
+	      return id;
+	}
+	
+	
+	 public ObservableList<Voyage> getAll_voyage() throws SQLException {
+	    	connectionDB con=new connectionDB();
+		      Connection connection=con.getConnection();
+		      String sql = "select* from voyages";
+		      Statement stm=connection.createStatement();
+		      ResultSet rs = stm.executeQuery(sql);
+		      ObservableList<Voyage> list = FXCollections.observableArrayList();
+		      while(rs.next()) {
+		    	  list.add(new Voyage(Integer.valueOf(rs.getString("id_voyage")),rs.getString("libelle_voyage"),rs.getString("date_debut"),
+		    			  rs.getString("date_fin"),rs.getString("heure_debut"),rs.getString("heure_fin"),Integer.valueOf(rs.getString("id_bus")),rs.getString("ville_depart"),rs.getString("ville_arrive")));
+		      }
+		      return list;
+	    }
+
+	 public void ajouter_voyage() throws SQLException {
+		  connectionDB con=new connectionDB();
+	      Connection connection=con.getConnection();
+	      Statement stm=connection.createStatement();
+	     String sql="INSERT INTO voyages (date_debut,date_fin, heure_debut,heure_fin,id_bus,ville_depart, ville_arrive) "
+	     		+ "VALUES ('"+this.date_deb+"', '"+this.date_fin+"','"+this.heure_debut+"','"+this.heure_fin+"',"+this.id_bus+",'"+this.ville_depart+"','"+this.ville_arrive+"')";
+	      stm.executeUpdate(sql);
+	  }
+	 public void  supprime_voyage() throws SQLException {
+		  connectionDB con=new connectionDB();
+	      Connection connection=con.getConnection();
+	      Statement stm=connection.createStatement();
+	      String sql2 = "update reservation set id_voyage=null where id_voyage ="+this.id_voyage;
+	      stm.executeUpdate(sql2);
+	      String sql = "delete from voyages where id_voyage ="+this.id_voyage;
+	      stm.executeUpdate(sql);
+	  }
+	 public void  modifier_voyage() throws SQLException {
+		  connectionDB con=new connectionDB();
+	      Connection connection=con.getConnection();
+	      Statement stm=connection.createStatement();
+	      String sql="update voyages set date_debut='"+this.date_deb+"', date_fin='"+this.date_fin+"',heure_debut='"+this.heure_debut+"',"
+	      		+ "heure_fin='"+this.heure_fin+"',id_bus="+this.id_bus+",ville_depart='"+this.ville_depart+"',ville_arrive='"+this.ville_arrive+"' where id_voyage="+this.id_voyage;
+	      stm.executeUpdate(sql);
+	  }
+	 
+	 
+	 //endak tnssa hadi, zid liha string blast localdate
 	/* Reserver Un voyage
 	public void reserverVoyage(Voyage v, Client c, place_bus p ,int nbr_places) throws SQLException {
 		connectionDB con = new connectionDB();
