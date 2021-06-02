@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import sample.model.Client;
 import sample.model.User;
+import sample.model.bus;
 
 import java.io.*;
 import java.sql.*;
@@ -167,6 +168,20 @@ public class DatabaseHandler {
         }
 
     }
+    public static void  Deleteacooreser(int use)
+    {
+        String sql =  "DELETE FROM reservation where id_user=?;";
+
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, use);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        Deleteaccount(use);
+
+    }
     public static void  Deleteaccount(int use)
     {
         String sql =  "DELETE FROM client where id_user=?;";
@@ -324,6 +339,9 @@ public class DatabaseHandler {
 
         return us;
     }
+    
+    
+    
     public static int image(int userId) throws SQLException, IOException {
         String selectStmt = "SELECT * FROM user WHERE id_user= ?";
         int status=0;

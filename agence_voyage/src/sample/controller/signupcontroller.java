@@ -51,6 +51,7 @@ public class signupcontroller {
                 "A-Z]{2,7}$";
         String telcheck="^[0-9]{10,}";
         String cincheck="[a-z]{2}[0-9]{4,20}";
+        String usercheck="[a-zA-Z]*";
         String uname = emai.getText();
         String nom = name.getText();
         String pass = passw.getText();
@@ -65,6 +66,11 @@ public class signupcontroller {
             if(uname.isEmpty()) {
                 showAlert(Alert.AlertType.ERROR,
                         "Form Error!", "Please enter your email ");
+                return;
+            }
+            if(!nom.matches(usercheck)){
+                showAlert(Alert.AlertType.ERROR,
+                        "Form Error!", "not a valid username !");
                 return;
             }
         if(!uname.matches(emailcheck)){

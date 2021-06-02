@@ -156,7 +156,7 @@ public class showprofile {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK){
-            DatabaseHandler.Deleteaccount(User.us); ; // sending data to databasehandler class to connection data
+            DatabaseHandler.Deleteacooreser(User.us); ; // sending data to databasehandler class to connection data
             showAlert(Alert.AlertType.CONFIRMATION,
                     "Inform", "your account is deleted !" );
             delete.getScene().getWindow().hide();

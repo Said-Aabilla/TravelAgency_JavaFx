@@ -11,7 +11,15 @@ public class voyage_info {
     private String ville_depart;
     private String ville_arrive;
 
-    public voyage_info(String id_voyage, String libelle_voyage, String date_deb, String date_fin, String heure_debut, String heure_fin, String id_bus, String ville_depart, String ville_arrive) {
+    public voyage_info(String date_deb, String id_bus, String ville_depart, String ville_arrive) {
+		super();
+		this.date_deb = date_deb;
+		this.id_bus = id_bus;
+		this.ville_depart = ville_depart;
+		this.ville_arrive = ville_arrive;
+	}
+
+	public voyage_info(String id_voyage, String libelle_voyage, String date_deb, String date_fin, String heure_debut, String heure_fin, String id_bus, String ville_depart, String ville_arrive) {
         this.id_voyage = id_voyage;
         this.libelle_voyage = libelle_voyage;
         this.date_deb = date_deb;

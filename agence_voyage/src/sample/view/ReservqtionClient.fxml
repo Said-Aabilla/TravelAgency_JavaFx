@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" prefHeight="514.0" prefWidth="688.0" style="-fx-border-color: darkblue; -fx-background-color: #121212; -fx-border-width: 2px 2px 2px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReservationController">
+   <children>
+      <Pane layoutX="242.0" layoutY="28.0" prefHeight="45.0" prefWidth="684.0" style="-fx-background-color: #e06100;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" prefHeight="20.0" prefWidth="210.0" text="Confirmer votre Reservation :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="43.0" layoutY="89.0" text="Date de Depart :" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="100.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="328.0" text="Catégorie :" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="260.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nbr" layoutX="73.0" layoutY="274.0" text="N° Place :" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="220.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="228.0" text="Arrivee :" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="180.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="169.0" text="Depart :" textFill="WHITE" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="140.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="230.0" text="CIN :" textFill="WHITE" AnchorPane.leftAnchor="401.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="176.0" text="Prénom :" textFill="WHITE" AnchorPane.leftAnchor="401.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="130.0" text="Nom :" textFill="WHITE" AnchorPane.leftAnchor="401.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateDep" layoutX="174.0" layoutY="102.0" textFill="WHITE" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="100.0" />
+      <Label fx:id="NbrPlace" layoutX="119.0" layoutY="221.0" textFill="WHITE" />
+      <Label fx:id="villeDep" layoutX="119.0" layoutY="141.0" textFill="WHITE" />
+      <Label fx:id="villeArr" layoutX="119.0" layoutY="181.0" textFill="WHITE" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="181.0" />
+      <Label fx:id="Categorie" layoutX="125.0" layoutY="261.0" textFill="WHITE" />
+      <Label fx:id="Prenom" layoutX="471.0" layoutY="177.0" textFill="WHITE" />
+      <Label fx:id="Nom" layoutX="454.0" layoutY="131.0" textFill="WHITE" />
+      <Label fx:id="CIN" layoutX="442.0" layoutY="231.0" textFill="WHITE" />
+      <Pane layoutX="267.0" layoutY="193.0" prefHeight="45.0" prefWidth="684.0" style="-fx-background-color: #e06100;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <children>
+            <Label layoutX="25.0" layoutY="15.0" text="Le Prix à Payer :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Price" layoutX="145.0" layoutY="17.0" text="Prix" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="Confirmer" layoutX="522.0" layoutY="8.0" mnemonicParsing="false" onAction="#ConfirmerReservation" style="-fx-background-color: #000; -fx-background-radius: 5em;" text="Confirmer" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="annuler" layoutX="428.0" layoutY="8.0" mnemonicParsing="false" onAction="#annuler" style="-fx-background-color: #000; -fx-background-radius: 5em;" text="Annuler" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
