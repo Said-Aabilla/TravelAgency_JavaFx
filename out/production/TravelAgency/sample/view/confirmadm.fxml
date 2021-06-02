@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.confirmadmin">
     <columnConstraints>
         <ColumnConstraints />
       <ColumnConstraints />
@@ -18,17 +18,12 @@
     <children>
         <Pane prefHeight="360.0" prefWidth="501.0" GridPane.columnIndex="1">
             <children>
-                <Label layoutX="148.0" layoutY="35.0" prefHeight="53.0" prefWidth="205.0" text="Login System" textAlignment="CENTER" wrapText="true">
+                <Label layoutX="106.0" layoutY="33.0" prefHeight="56.0" prefWidth="340.0" text="Continue as Admin" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font name="Bernhard Modern Bold Italic BT" size="31.0" />
                     </font>
                 </Label>
-                <JFXPasswordField fx:id="passw" labelFloat="true" layoutX="130.0" layoutY="209.0" maxWidth="241.0" minWidth="232.0" prefHeight="35.0" prefWidth="241.0" promptText="Password" unFocusColor="#4a4949">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </JFXPasswordField>
-                <JFXTextField fx:id="emai" labelFloat="true" layoutX="130.0" layoutY="142.0" maxWidth="241.0" minWidth="181.0" prefHeight="38.0" prefWidth="241.0" promptText="email">
+                <JFXTextField fx:id="txt" labelFloat="true" layoutX="128.0" layoutY="158.0" maxWidth="241.0" minWidth="181.0" prefHeight="38.0" prefWidth="241.0" promptText="Matricule">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -39,7 +34,7 @@
                   <Point3D y="1.0" />
                </rotationAxis>
                 </JFXTextField>
-                <JFXButton fx:id="signup" layoutX="196.0" layoutY="281.0" mnemonicParsing="false" onAction="#setsignupButton" onMouseClicked="#setsignupButton" prefHeight="47.0" prefWidth="108.0" ripplerFill="#4a32c7c4" style="-fx-background-color: green; -fx-background-radius: 10px;" text="sign up" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" wrapText="true">
+                <JFXButton fx:id="confirm" layoutX="196.0" layoutY="271.0" mnemonicParsing="false" onAction="#setConfirmButton" onMouseClicked="#setsignupButton" prefHeight="47.0" prefWidth="108.0" ripplerFill="#4a32c7c4" style="-fx-background-color: green; -fx-background-radius: 10px;" text="Confirm" textAlignment="CENTER" textFill="WHITE" textOverrun="LEADING_ELLIPSIS" wrapText="true">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>

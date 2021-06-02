@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="window" prefHeight="415.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ClientController">
+    <children>
+        <Pane layoutX="20.0" layoutY="19.0" prefHeight="43.0" prefWidth="644.0" style="-fx-background-color: #e06100;">
+            <children>
+                <Label layoutX="14.0" layoutY="12.0" prefHeight="20.0" prefWidth="214.0" text="Interface des Voyages :" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <TableView fx:id="table" layoutX="242.0" layoutY="122.0" onMouseClicked="#printvoyage" prefHeight="295.0" prefWidth="315.0" style="-fx-background-color: transparent; -fx-border-color: #e06100; -fx-border-width: 0px 2px 2px;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="349.0" AnchorPane.topAnchor="80.0">
+            <columns>
+                <TableColumn fx:id="idBus" prefWidth="57.19997978210449" text="ID BUS" />
+                <TableColumn fx:id="libellle" prefWidth="70.40003204345703" text="LIBELLE" />
+                <TableColumn fx:id="dateDep" minWidth="0.0" prefWidth="89.5999755859375" text="DATE DEPART" />
+                <TableColumn fx:id="Hdeb" prefWidth="121.5999755859375" text="HEURE DEBUT" />
+                <TableColumn fx:id="Harriv" prefWidth="77.199951171875" text="HEURE ARRIVE" />
+                <TableColumn fx:id="Vdep" prefWidth="87.19998168945312" text="VILLE DEPART" />
+                <TableColumn fx:id="Varriv" prefWidth="141.60003662109375" text="VILLE ARRIVE" />
+            </columns>
+        </TableView>
+        <Button fx:id="reserver" layoutX="383.0" layoutY="371.0" mnemonicParsing="false" onAction="#reserver" style="-fx-background-color: #e06100; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="RESERVER " textFill="WHITE" AnchorPane.rightAnchor="210.60000000000002" AnchorPane.topAnchor="371.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
+        <Label layoutX="353.0" layoutY="181.0" text="HEURE DEPART" AnchorPane.rightAnchor="228.60000000000002" AnchorPane.topAnchor="181.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="357.0" layoutY="130.0" text="DATE DEPART" AnchorPane.rightAnchor="233.39999999999998" AnchorPane.topAnchor="130.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="363.0" layoutY="191.0" prefHeight="20.0" prefWidth="116.0" text="HEURE ARRIVEE" AnchorPane.rightAnchor="211.0" AnchorPane.topAnchor="230.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="373.0" layoutY="201.0" prefHeight="20.0" prefWidth="116.0" text="VILLE ARRIVE" AnchorPane.rightAnchor="211.0" AnchorPane.topAnchor="330.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="346.0" layoutY="271.0" prefHeight="20.0" prefWidth="116.0" text="VILLE DEPART" AnchorPane.rightAnchor="211.0" AnchorPane.topAnchor="280.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="libaff" layoutX="491.6" layoutY="80.0" text="LIBELLE" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="80.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="Hdaff" layoutX="487.0" layoutY="181.0" AnchorPane.rightAnchor="94.60000000000002" AnchorPane.topAnchor="181.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="Ddebaff" layoutX="492.0" layoutY="130.0" AnchorPane.rightAnchor="98.39999999999998" AnchorPane.topAnchor="130.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="Hdarriv" layoutX="489.0" layoutY="230.0" AnchorPane.rightAnchor="96.60000000000002" AnchorPane.topAnchor="230.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="Vdepaff" layoutX="493.0" layoutY="280.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="280.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="Varrivaff" layoutX="492.0" layoutY="330.0" AnchorPane.rightAnchor="98.79999999999995" AnchorPane.topAnchor="330.0">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+      <Button fx:id="retourner" layoutX="516.0" layoutY="371.0" mnemonicParsing="false" onAction="#retourner" style="-fx-background-color: #e06100; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Retourner" textFill="WHITE" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="371.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="idbus" layoutX="222.0" layoutY="386.0" opacity="0.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

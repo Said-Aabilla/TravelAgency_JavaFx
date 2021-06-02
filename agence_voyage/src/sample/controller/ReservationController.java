@@ -15,8 +15,10 @@ import javafx.scene.layout.AnchorPane;
 import sample.model.Client;
 import sample.model.User;
 import sample.util.DatabaseHandler;
+	import sample.util.GeneratePDF;
+	import sample.util.Mail;
 
-	public class ReservationController implements Initializable {
+public class ReservationController implements Initializable {
 
 	    @FXML
 	    private Label dateDep;
@@ -58,8 +60,10 @@ import sample.util.DatabaseHandler;
 
 
 	    @FXML
-	    void ConfirmerReservation(ActionEvent event) {
-
+	    void ConfirmerReservation(ActionEvent event) throws Exception {
+			GeneratePDF.generatePDF(150,dateDep.getText(),"",villeDep.getText(),villeArr.getText());
+			AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/BilletSent.fxml"));
+			window.getChildren().setAll(obj);
 	    }
 
 	    @FXML

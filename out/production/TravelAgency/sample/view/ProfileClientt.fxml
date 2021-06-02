@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="514.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.showprofile">
+   <children>
+      <Pane layoutX="36.0" layoutY="421.0" prefHeight="74.0" prefWidth="281.0" style="-fx-background-color: #f9f8e9; -fx-background-radius: 10px,5px,10px,5px;" />
+      <Pane layoutX="37.0" layoutY="323.0" prefHeight="74.0" prefWidth="281.0" style="-fx-background-color: #f9f8e9; -fx-background-radius: 10px,5px,10px,5px;" />
+      <Pane layoutX="26.0" layoutY="27.0" prefHeight="43.0" prefWidth="644.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label layoutX="47.0" layoutY="8.0" text="Profile du Client" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="disp" layoutX="534.0" layoutY="6.0" mnemonicParsing="false" onAction="#setDispl" style="-fx-background-color: green; -fx-background-radius: 5px; -fx-text-fill: #fff;" text=" Show my info">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TextField fx:id="cin" layoutX="434.0" layoutY="96.0" prefHeight="27.0" prefWidth="200.0" promptText="CIN du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="96.0" />
+      <TextField fx:id="nom" layoutX="434.0" layoutY="136.0" prefHeight="27.0" prefWidth="200.0" promptText="Nom de l'Admin" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="136.0" />
+      <TextField fx:id="prenom" layoutX="434.0" layoutY="176.0" prefHeight="27.0" prefWidth="200.0" promptText="Prenom du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="176.0" />
+      <Pane layoutX="39.0" layoutY="100.0" prefHeight="214.0" prefWidth="281.0" style="-fx-background-color: #f9f8e9; -fx-background-radius: 10px,5px,10px,5px;" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <ImageView fx:id="imv" fitHeight="190.0" fitWidth="172.0" layoutX="55.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../img_212908.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="txtar" contentDisplay="CENTER" layoutX="40.0" layoutY="325.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.33" prefHeight="17.0" prefWidth="281.0" text="no file has been selected " textAlignment="CENTER" textFill="#560000" AnchorPane.topAnchor="325.0" />
+      <Button fx:id="update" layoutX="440.0" layoutY="398.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: green; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Edit info" AnchorPane.leftAnchor="440.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="398.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="delete" layoutX="40.0" layoutY="462.0" mnemonicParsing="false" onAction="#Del" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: red; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Delete account" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="532.0" AnchorPane.topAnchor="462.0" />
+      <TextField fx:id="adre" layoutX="434.0" layoutY="248.0" prefHeight="27.0" prefWidth="200.0" promptText="Adresse du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="248.0" />
+      <TextField fx:id="tel" layoutX="434.0" layoutY="288.0" prefHeight="27.0" prefWidth="200.0" promptText="Telephone du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="288.0" />
+      <TextField fx:id="codeP" layoutX="434.0" layoutY="328.0" prefHeight="27.0" prefWidth="200.0" promptText="Code Postale du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="328.0" />
+      <Button fx:id="brow" layoutX="40.0" layoutY="353.0" mnemonicParsing="false" onAction="#setBrow" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #e06100;" text="Browse" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="353.0" />
+      <TextField fx:id="emai" disable="true" layoutX="436.0" layoutY="213.0" prefHeight="27.0" prefWidth="214.0" promptText="e-mail" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="436.0" AnchorPane.rightAnchor="34.0" />
+      <Button fx:id="upd" layoutX="40.0" layoutY="429.0" mnemonicParsing="false" onAction="#clickup" prefHeight="17.0" prefWidth="112.0" style="-fx-background-color: green; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="update password" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="532.0" />
+      <Button fx:id="upl" disable="true" layoutX="209.0" layoutY="353.0" mnemonicParsing="false" onAction="#setUpl" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: #e06100;" text="update photo" textFill="WHITE" />
+      <Pane fx:id="pand" layoutX="340.0" layoutY="90.0" prefHeight="268.0" prefWidth="96.0" visible="false">
+         <children>
+            <Label layoutX="11.0" layoutY="56.0" prefHeight="17.0" prefWidth="70.0" text="Nom">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="14.0" prefHeight="17.0" prefWidth="70.0" text="CIN">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="89.0" prefHeight="17.0" prefWidth="70.0" text="Prenom">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="128.0" prefHeight="17.0" prefWidth="70.0" text="E-mail">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="166.0" prefHeight="17.0" prefWidth="70.0" text="Adresse">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="205.0" prefHeight="17.0" prefWidth="70.0" text="Tel">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="237.0" prefHeight="17.0" prefWidth="70.0" text="Code postal">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

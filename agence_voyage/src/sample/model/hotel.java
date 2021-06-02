@@ -86,7 +86,7 @@ public class hotel {
 	      while(rs.next()) {
 	    	  this.num_ville = Integer.valueOf(rs.getString("num_ville"));
 	      }
-	     String sql="INSERT INTO hotel (image_hotel, short_description, description,"+ " adresse,prix_range,num_ville) "
+	     String sql="INSERT INTO hotel (image_hotel, short_description, description, adresse,prix_range,num_ville) "
 	     		+ "VALUES ('"+this.image_hotel+"', '"+this.short_description+"','"+this.description+"','"+this.adresse+"','"+this.prix_range+"',"+this.num_ville+")";
 	      stm.executeUpdate(sql);
 	  }

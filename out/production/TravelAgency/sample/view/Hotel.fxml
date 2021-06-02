@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.HotelController">
+   <children>
+      <TextField fx:id="pd_hotel" layoutX="40.0" layoutY="84.0" prefHeight="27.0" prefWidth="212.0" promptText="Petite Description " style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="150.0" />
+      <TextField fx:id="rp_hotel" layoutX="40.0" layoutY="158.0" prefHeight="27.0" prefWidth="212.0" promptText="Range Prix " style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="210.0" />
+      <TextField fx:id="adr_hotel" layoutX="288.0" layoutY="71.0" prefHeight="27.0" prefWidth="212.0" promptText="Adresse de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="90.0" />
+      <TextField fx:id="v_hotel" layoutX="40.0" layoutY="208.0" prefHeight="27.0" prefWidth="212.0" promptText="Ville de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="150.0" />
+      <TextArea fx:id="des_hotel" layoutX="40.0" layoutY="279.0" prefHeight="116.0" prefWidth="212.0" promptText="Description de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="279.0" />
+      <Pane layoutX="132.0" layoutY="-15.0" prefHeight="43.0" prefWidth="644.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Label layoutX="28.0" layoutY="12.0" text="Rechercher" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txt_chercher_hotel" layoutX="125.0" layoutY="8.0" onKeyPressed="#txt_cherche_hotel_keypress" prefHeight="0.0" prefWidth="149.0" style="-fx-background-color: transparent; -fx-border-color: #fff; -fx-border-width: 0px 0px 2px;">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </TextField>
+            <Button fx:id="chercher_hotel" layoutX="311.0" layoutY="10.0" mnemonicParsing="false" onAction="#chercher_hotel_click" style="-fx-background-color: white; -fx-background-radius: 5em;" text="Chercher" textFill="#e06100">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Button fx:id="ajouter_hotel" layoutX="554.0" layoutY="75.0" mnemonicParsing="false" onAction="#ajouter_hotel_click" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Ajouter" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier_hotel" layoutX="554.0" layoutY="117.0" mnemonicParsing="false" onAction="#modifier_hotel_click" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Modifier" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="110.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="supprimer_hotel" layoutX="567.0" layoutY="162.0" mnemonicParsing="false" onAction="#supprimer_hotel_click" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Supprimer" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="table_hotel" layoutX="266.0" layoutY="199.0" onMouseClicked="#select" prefHeight="200.0" prefWidth="398.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="200.0">
+        <columns>
+          <TableColumn fx:id="id_col_hotel" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="pd_col_hotel" prefWidth="32.4000244140625" text="PETITE DESCRIPTION" />
+            <TableColumn fx:id="des_col_hotel" prefWidth="118.0" text="DESCRIPTION" />
+            <TableColumn fx:id="rp_col_hotel" minWidth="0.0" prefWidth="0.0" text="RANGE PRIX" />
+            <TableColumn fx:id="adr_col_hotel" minWidth="0.0" prefWidth="62.800018310546875" text="ADRESSE" />
+            <TableColumn fx:id="v_col_hotel" prefWidth="162.7999267578125" text="VILLE" />
+        </columns>
+      </TableView>
+      <TextField fx:id="id_hotel" layoutX="40.0" layoutY="96.0" prefHeight="27.0" prefWidth="212.0" promptText="ID de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="90.0" />
+   </children>
+</AnchorPane>
