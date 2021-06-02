@@ -19,7 +19,7 @@
                 </Label>
             </children>
         </Pane>
-        <TableView fx:id="table" layoutX="242.0" layoutY="122.0" onMouseMoved="#printvoyage" prefHeight="295.0" prefWidth="315.0" style="-fx-background-color: transparent; -fx-border-color: #e06100; -fx-border-width: 0px 2px 2px;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="349.0" AnchorPane.topAnchor="80.0">
+        <TableView fx:id="table" layoutX="242.0" layoutY="122.0" onMouseClicked="#printvoyage" prefHeight="295.0" prefWidth="315.0" style="-fx-background-color: transparent; -fx-border-color: #e06100; -fx-border-width: 0px 2px 2px;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="349.0" AnchorPane.topAnchor="80.0">
             <columns>
                 <TableColumn fx:id="idBus" prefWidth="57.19997978210449" text="ID BUS" />
                 <TableColumn fx:id="libellle" prefWidth="70.40003204345703" text="LIBELLE" />
