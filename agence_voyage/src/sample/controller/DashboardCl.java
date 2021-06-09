@@ -18,7 +18,7 @@ import java.io.IOException;
     private Button acc;
 
     @FXML
-    private AnchorPane window;
+    private AnchorPane wind;
     
     @FXML
     private Button logout1;
@@ -37,12 +37,29 @@ import java.io.IOException;
     @FXML
     void profile(ActionEvent event) throws IOException {
         AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/ProfileClientt.fxml"));
-        window.getChildren().setAll(obj);
+        wind.getChildren().setAll(obj);
     }
 
      @FXML
      void AfficherChercher(ActionEvent event) throws IOException {
          AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/ChercherBus.fxml"));
-         window.getChildren().setAll(obj);
+         wind.getChildren().setAll(obj);
+     }
+
+     @FXML
+     void lesreserv(ActionEvent event) throws IOException {
+         AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/Mesreservations.fxml"));
+         wind.getChildren().setAll(obj);
+     }
+     @FXML
+     void AboutUs(ActionEvent event) throws IOException {
+         AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/Aboutus.fxml"));
+         wind.getChildren().setAll(obj);
+     }
+
+     @FXML
+     void Leshotel(ActionEvent event) throws IOException {
+         AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/Hotels.fxml"));
+         wind.getChildren().setAll(obj);
      }
 }

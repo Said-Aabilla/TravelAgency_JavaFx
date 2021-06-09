@@ -11,7 +11,9 @@ import java.io.FileOutputStream;
 
 public class GeneratePDF {
     public static String file;
-    public static void generatePDF (double price, String DateDepa, String HourDepa, String VilleDepa,String VilleArriv) {
+
+    public static void generatePDF (String price, String DateDepa, String HourDepa, String VilleDepa, String VilleArriv) {
+
         try {
            String filename = "C:\\Users\\DELL\\OneDrive\\Desktop\\travAGEN\\TravelAgency\\agence_voyage\\src\\sample\\Generated Billets\\Billet.pdf";
            Document document = new Document();
@@ -19,7 +21,7 @@ public class GeneratePDF {
 
            document.open();
            //add a parag
-           Paragraph p = new Paragraph("hello motherfuckers, this was generated using JavaFX");
+           Paragraph p = new Paragraph("hello, We wish you a safe trip!");
            document.add(p);
            //adding empty parag
            document.add( new Paragraph(" "));
@@ -54,3 +56,4 @@ public class GeneratePDF {
     }
 
 }
+

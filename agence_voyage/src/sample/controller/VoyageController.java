@@ -1,3 +1,4 @@
+
 package sample.controller;
 
 
@@ -70,11 +71,6 @@ public class VoyageController implements Initializable{
     @FXML
     private TableColumn<Voyage, String> ha_col_voyage;
 
-    @FXML
-    private TableColumn<Voyage, String> vp_col_voyage;
-
-    @FXML
-    private TableColumn<Voyage, String> va_col_voyage;
 
     @FXML
     private Button ajouter_voyage;
@@ -100,8 +96,8 @@ public class VoyageController implements Initializable{
   	    da_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("date_fin"));
   	    hd_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_debut"));
   	    ha_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_fin"));
-  	    vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
-  	    va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
+  	  //  vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
+  	  //  va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
   		table_voyage.setItems(list);
     } 
 
@@ -116,8 +112,8 @@ public class VoyageController implements Initializable{
   	    da_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("date_fin"));
   	    hd_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_debut"));
   	    ha_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_fin"));
-  	    vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
-  	    va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
+  	   // vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
+  	   // va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
   		table_voyage.setItems(list);
     	methods.message("infos", "data has been added successfully !");
     }
@@ -131,8 +127,8 @@ public class VoyageController implements Initializable{
   	    da_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("date_fin"));
   	    hd_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_debut"));
   	    ha_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_fin"));
-  	    vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
-  	    va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
+  	  //  vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
+  	    //va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
   		table_voyage.setItems(list);
     }
 
@@ -147,8 +143,8 @@ public class VoyageController implements Initializable{
   	    da_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("date_fin"));
   	    hd_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_debut"));
   	    ha_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_fin"));
-  	    vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
-  	    va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
+  	  //  vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
+  	  //  va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
   		table_voyage.setItems(list);
     	methods.message("infos", "data has been update successfully !");
     }
@@ -165,8 +161,8 @@ public class VoyageController implements Initializable{
     		txt_da_voyage.setText(da_col_voyage.getCellData(index));
     		txt_hd_voyage.setText(hd_col_voyage.getCellData(index));
     		txt_ha_voyage.setText(ha_col_voyage.getCellData(index));
-    		txt_vd_voyage.setText(vp_col_voyage.getCellData(index));
-    		txt_va_voyage.setText(va_col_voyage.getCellData(index));
+    		//txt_vd_voyage.setText(vp_col_voyage.getCellData(index));
+    	//	txt_va_voyage.setText(va_col_voyage.getCellData(index));
     }
 
     @FXML
@@ -179,8 +175,8 @@ public class VoyageController implements Initializable{
 	    da_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("date_fin"));
 	    hd_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_debut"));
 	    ha_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("heure_fin"));
-	    vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
-	    va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
+	    //vp_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_depart"));
+	    //va_col_voyage.setCellValueFactory(new PropertyValueFactory<Voyage,String>("ville_arrive"));
 		table_voyage.setItems(list);
     methods.message("infos", "data has been deleted successfully !");
     }

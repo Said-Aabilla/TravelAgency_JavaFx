@@ -15,6 +15,7 @@ import sample.util.voyage_info;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Locale;
 
 public class ChercherBus {
 
@@ -33,19 +34,39 @@ public class ChercherBus {
      Voyage v1 = new Voyage();
     // create a alert
     Alert a = new Alert(Alert.AlertType.NONE);
-
+    //my own function to test if a string is numeric
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
     @FXML
     void chercherVoyage(javafx.event.ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
 
-        String vd = villeD.getText();
-        String va = villeA.getText();
+        String vd = villeD.getText().toUpperCase(Locale.ROOT);
+        String va = villeA.getText().toUpperCase();
         if ((va.isEmpty() && vd.isEmpty())) {
             // set alert type
             a.setAlertType(Alert.AlertType.ERROR);
-            a.setContentText("Vous devez remplissez au moins la ville depart et destination");
+            a.setContentText("Vous devez remplissez au moin les champs des villes !!");
             // show the dialog
             a.show();
-        } else {
+        } else if ((va.length()>14 && vd.length()>14) || (isNumeric(va)) ||(isNumeric(vd))) {
+            // set alert type
+            a.setAlertType(Alert.AlertType.ERROR);
+            a.setContentText("Aucun ville avec ce nom !!");
+            // show the dialog
+            a.show();
+        }  else if (!(dt.getText().matches("\\d{4}-\\d{2}-\\d{2}"))) {
+            // set alert type
+            a.setAlertType(Alert.AlertType.ERROR);
+            a.setContentText("Format du date est invalide !!");
+            // show the dialog
+            a.show();
+        }else {
             try {
                 v1.get_voyage(villeD.getText(), villeA.getText(), dt.getText());
 

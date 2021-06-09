@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.util.DatabaseHandler;
@@ -15,20 +15,23 @@ import sample.util.DatabaseHandler;
 import java.io.IOException;
 
 public class confirmadmin {
-    @javafx.fxml.FXML
-    @FXML
-    private JFXTextField txt;
-
 
     @javafx.fxml.FXML
     @FXML
-    private JFXButton confirm;
-    public void setConfirmButton(ActionEvent actionEvent) throws IOException {
-        String mat=txt.getText();
+    private TextField matricule;
+
+    @javafx.fxml.FXML
+    @FXML
+    private Button confirm;
+
+    @javafx.fxml.FXML
+    @FXML
+    void setConfirmButton(ActionEvent event) throws IOException {
+        String mat=matricule.getText();
         if(DatabaseHandler.confirmadm(mat)) {
             confirm.getScene().getWindow().hide();
             Stage dashboardStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../view/AdminMain.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../view/AdminDashboard.fxml"));
             Scene scene = new Scene(root, 800, 700);
             dashboardStage.setScene(scene);
             dashboardStage.show();
@@ -42,6 +45,7 @@ public class confirmadmin {
         }
     }
 
-    public void setsignupButton(MouseEvent mouseEvent) {
-    }
+
+
+
 }

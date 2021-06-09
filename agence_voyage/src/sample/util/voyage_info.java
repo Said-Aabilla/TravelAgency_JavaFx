@@ -1,6 +1,9 @@
 package sample.util;
 
+import java.time.LocalDate;
+
 public class voyage_info {
+    private String ville_arrive;
     private String id_voyage;
     private String libelle_voyage;
     private String date_deb;
@@ -9,17 +12,18 @@ public class voyage_info {
     private String heure_fin;
     private String id_bus;
     private String ville_depart;
-    private String ville_arrive;
 
-    public voyage_info(String date_deb, String id_bus, String ville_depart, String ville_arrive) {
-		super();
-		this.date_deb = date_deb;
-		this.id_bus = id_bus;
-		this.ville_depart = ville_depart;
-		this.ville_arrive = ville_arrive;
-	}
 
-	public voyage_info(String id_voyage, String libelle_voyage, String date_deb, String date_fin, String heure_debut, String heure_fin, String id_bus, String ville_depart, String ville_arrive) {
+    public voyage_info(String date_deb, String id_bus, String heure_debut, String ville_depart, String ville_arrive) {
+        super();
+        this.date_deb = date_deb;
+        this.heure_debut = heure_debut;
+        this.id_bus = id_bus;
+        this.ville_depart = ville_depart;
+        this.ville_arrive = ville_arrive;
+    }
+
+    public voyage_info(String id_voyage, String libelle_voyage, String date_deb, String date_fin, String heure_debut, String heure_fin, String id_bus, String ville_depart, String ville_arrive) {
         this.id_voyage = id_voyage;
         this.libelle_voyage = libelle_voyage;
         this.date_deb = date_deb;
@@ -30,6 +34,17 @@ public class voyage_info {
         this.ville_depart = ville_depart;
         this.ville_arrive = ville_arrive;
     }
+
+    public voyage_info(String libelle_voyage, String date_debut, String heure_debut, String ville_depart, String ville_arrive, String no_res, String date_res) {
+        this.libelle_voyage = libelle_voyage;
+        this.date_deb = date_debut;
+        this.heure_debut = heure_debut;
+        this.heure_fin = date_res;
+        this.id_bus = no_res;
+        this.ville_depart = ville_depart;
+        this.ville_arrive = ville_arrive;
+    }
+
 
     public String getId_voyage() {
         return id_voyage;
@@ -87,8 +102,6 @@ public class voyage_info {
         this.id_bus = id_bus;
     }
 
-
-
     public String getVille_depart() {
         return ville_depart;
     }
@@ -104,9 +117,5 @@ public class voyage_info {
     public void setVille_arrive(String ville_arrive) {
         this.ville_arrive = ville_arrive;
     }
-
-
-
-
 
 }

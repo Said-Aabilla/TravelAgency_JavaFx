@@ -1,14 +1,17 @@
 package sample.util;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
-import sample.model.Client;
-import sample.model.User;
-import sample.model.bus;
+
+import sample.model.*;
+
 
 import java.io.*;
 import java.sql.*;
+import java.time.LocalDate;
 
 public class DatabaseHandler {
 
@@ -168,6 +171,49 @@ public class DatabaseHandler {
         }
 
     }
+
+    public static void  ResetPassword(String newPass ,String email)
+    {
+        String sql =  "UPDATE user SET password_user = ? , reset= ? WHERE email_user=?";
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, newPass);
+            pstmt.setString(2, "false");
+            pstmt.setString(3, email);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    public static boolean checkreset(String email)
+    {
+        Connection connection = GetDatabaseConnection();
+//       boolean
+        String checkQuery = "select * from user where reset = ? and email_user =?"; //
+
+
+        PreparedStatement preparedStatement = null;
+        boolean status = false;
+
+        try {
+            preparedStatement = connection.prepareStatement(checkQuery);
+            preparedStatement.setString(2, email);
+            preparedStatement.setString(1, "false");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+
+            status = resultSet.next();
+            preparedStatement.close();
+            return status;
+
+        } catch (SQLException e) {
+//
+            e.printStackTrace();
+        }
+        return status;
+    }
     public static void  Deleteacooreser(int use)
     {
         String sql =  "DELETE FROM reservation where id_user=?;";
@@ -263,6 +309,8 @@ public class DatabaseHandler {
         }
         return i;
     }
+
+
     public static int udloadimage(int id, FileInputStream image , File select)
     {
         String sql =  "UPDATE user set image=? where id_user = ?";
@@ -308,6 +356,8 @@ public class DatabaseHandler {
 
         return cl;
     }
+
+    //pour retourner les info d'un user
     private static User getUserFromResultSet(ResultSet rs) throws SQLException
     {
 
@@ -316,6 +366,7 @@ public class DatabaseHandler {
             us = new User();
             us.setEmail_user(rs.getString("email_user"));
             us.setPassword_user(rs.getString("password_user"));
+            us.setRating(rs.getDouble("rating"));
 
 
         }
@@ -340,8 +391,9 @@ public class DatabaseHandler {
         return us;
     }
     
-    
-    
+
+    // recuperer l'image du user
+
     public static int image(int userId) throws SQLException, IOException {
         String selectStmt = "SELECT * FROM user WHERE id_user= ?";
         int status=0;
@@ -397,4 +449,160 @@ public class DatabaseHandler {
 
     }
 
+    // pour la categorie de bus
+    private static categories_bus getCategorieResultSet(ResultSet rs) throws SQLException
+    {
+
+        categories_bus bbus=null;
+        if (rs.next()) {
+            bbus = new categories_bus();
+            bbus.setNum_cb (rs.getInt("num_cb"));
+            bbus.setLibelle_cb (rs.getString("libelle_cb"));
+            bbus.setCapacite_cb (rs.getInt("capacité_cb"));
+            bbus.setPrice (rs.getDouble("price"));
+        }
+        return bbus;
+    }
+
+
+    public static categories_bus getcategorie (String Id) throws SQLException, ClassNotFoundException {
+        //Declare a SELECT statement
+        String selectStmt = "SELECT c.num_cb, c.libelle_cb, c.capacité_cb,c.price FROM categories_bus c,bus b WHERE b.id_bus = ? and b.num_cb = c.num_cb";
+        categories_bus cat =null;
+        //Execute SELECT statement
+
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(selectStmt)) {
+            pstmt.setInt(1, Integer.parseInt(Id));
+            ResultSet resultSet = pstmt.executeQuery();
+            cat = getCategorieResultSet(resultSet);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        return cat;
+    }
+    //inserer une reservation
+    public static void insertreservation ( String idvoyage, String id_user) throws SQLException {
+        LocalDate date_reservation = LocalDate.now();
+        String date = date_reservation.toString();
+        String sql = "INSERT INTO reservation (date_res, id_user,id_voyage) VALUES ( ? ,?,?)";
+        int status=0;
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, date);
+            pstmt.setString(2, id_user);
+            pstmt.setString(3, idvoyage);
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    public static void rating (int usrID,double rat)
+    {
+        String sql =  "update user set rating=?  where id_user=? ";
+        int status=0;
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(2, usrID);
+            pstmt.setDouble(1, rat);
+
+
+
+            status= pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static double ratingCount ()
+    {
+        String sql =  "select avg(rating) as 'average' from user where rating is not null";
+        double scale = Math.pow(10, 2);
+
+        double status=0;
+        String ret="";
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            ResultSet resultSet = pstmt.executeQuery();
+            while(resultSet.next()) {
+
+                status= Math.round(resultSet.getDouble("average")*scale)/scale;
+            }
+
+            ret=""+status;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return status;
+    }
+    public static ObservableList<voyage_info> get_mesReservation(int iduser) throws SQLException, ClassNotFoundException {
+        ObservableList<voyage_info> liste = FXCollections.observableArrayList();
+
+        String sql = "select v.libelle_voyage,v.date_debut, v.heure_debut,v.ville_depart,v.ville_arrive, r.no_res,r.date_res from  voyages v ,reservation r where r.id_user= ? and v.id_voyage=r.id_voyage";
+        try {
+            Connection conn = GetDatabaseConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, iduser);
+            ResultSet res = pstmt.executeQuery();
+            while (res.next()) {
+                liste.add(new voyage_info(res.getString("libelle_voyage"), res.getString("date_debut"), res.getString("heure_debut"),
+                        res.getString("ville_depart"), res.getString("ville_arrive"), Integer.toString(res.getInt("no_res")), res.getString("date_res")));
+                //reserv = new reservation (res.getInt("no_res"),res.getString("date_res"));
+
+            }
+        }catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return liste;
+
+    }
+
+
+    //retreive hotel image :
+
+ public static int image_hotel(int Id) throws SQLException, IOException {
+        String selectStmt = "SELECT * FROM hotel WHERE id_hotel= ?";
+        int status=0;
+        InputStream is = null;
+        try (Connection conn = GetDatabaseConnection();
+             PreparedStatement pstmt = conn.prepareStatement(selectStmt)) {
+            pstmt.setInt(1, Id);
+            ResultSet rs = pstmt.executeQuery();
+
+            while(rs.next()) {
+                is = rs.getBinaryStream("image_hotel");
+            }
+            if(is!=null) {
+                status=1;
+                OutputStream os =new FileOutputStream(new File("photo.jpg"));
+                byte [] content = new byte[1024];
+                int size=0;
+                while((size=is.read(content))!=-1)
+                {
+                    os.write(content,0,size);
+
+                } }
+        }
+
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return status;
+
+
+    }
+
+
+
+
 }
+
+

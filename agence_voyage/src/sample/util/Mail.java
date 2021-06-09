@@ -18,7 +18,8 @@ public class Mail {
         Properties propreties = new Properties();
 
 
-        propreties.put("mail.smtp.auth", true);
+        propreties.put("mail.smtp.auth", "true");
+
         propreties.put("mail.smtp.starttls.enable", "true");
         propreties.put("mail.smtp.host", "smtp.gmail.com");
         propreties.put("mail.smtp.port", "587");
@@ -33,10 +34,11 @@ public class Mail {
                 return new PasswordAuthentication(myAccountEmail,password);
             }
         });
-        Message message= prepareMessage(session,myAccountEmail,recepient);
+        Message message = prepareMessage(session,myAccountEmail,recepient);
+
 
         //Transport.send(message);
-        System.out.println("Message sent successfully");
+       // System.out.println("Message sent successfully");
     }
 
     public static Message prepareMessage(Session session, String myAccountEmail, String recepient) {

@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -68,13 +65,11 @@ public class ClientController implements Initializable {
     private Label Varrivaff;
 
     @FXML
-    private Button retourner;
-    @FXML
     private Label idbus;
 
 	// ObservableList<voyage_info> list = Voyage.list;
     static voyage_info  voy ;
-
+    static String id;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -86,8 +81,15 @@ public class ClientController implements Initializable {
 		dateDep.setCellValueFactory(new PropertyValueFactory<voyage_info, String>("date_deb"));
 		Varriv.setCellValueFactory(new PropertyValueFactory<voyage_info, String>("ville_arrive"));
 		Vdep.setCellValueFactory(new PropertyValueFactory<voyage_info, String>("ville_depart"));
-
-		table.setItems(Voyage.list);
+		if (Voyage.list.isEmpty())
+		{
+			Alert a = new Alert(Alert.AlertType.NONE);
+			a.setAlertType(Alert.AlertType.INFORMATION);
+			a.setContentText("There are no travels for those credentials at the moment, please try again later !!");
+			// show the dialog
+			a.show();
+		} else{
+		table.setItems(Voyage.list);}
 	}
 	 @FXML
 	    void printvoyage(MouseEvent event) {
@@ -101,14 +103,14 @@ public class ClientController implements Initializable {
 			Hdarriv.setText(Harriv.getCellData(index));
 			Ddebaff.setText(dateDep.getCellData(index));
 			Varrivaff.setText(Varriv.getCellData(index));
-			Vdepaff.setText(Vdep.getCellData(index));
+		    Vdepaff.setText(Vdep.getCellData(index));
 			idbus.setText(idBus.getCellData(index));
-			voy = new voyage_info(Ddebaff.getText(),idbus.getText(),Vdepaff.getText(),Varrivaff.getText());
+			voy = new voyage_info(Ddebaff.getText(),idbus.getText(),Hdaff.getText(),Vdepaff.getText(),Varrivaff.getText());
 
 	    }
 
 	    @FXML
-	    void reserver(ActionEvent event) throws IOException {
+	    void reservation(ActionEvent event) throws IOException {
 	    	AnchorPane obj = FXMLLoader.load(getClass().getResource("../view/ReservationClient.fxml"));
 			window.getChildren().setAll(obj);
 	    }

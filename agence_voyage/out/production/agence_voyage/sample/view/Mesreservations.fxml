@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Mesreservations">
+   <children>
+      <AnchorPane fx:id="window" layoutX="1.0" prefHeight="502.0" prefWidth="886.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane layoutX="4.0" layoutY="19.0" prefHeight="43.0" prefWidth="882.0" style="-fx-background-color: #e06100;">
+               <children>
+                  <Label layoutX="31.0" layoutY="8.0" prefHeight="20.0" prefWidth="214.0" text="Mes Reservations:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="table" layoutX="5.0" layoutY="66.0" prefHeight="522.0" prefWidth="882.0" stylesheets="@style.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="66.0">
+               <columns>
+                  <TableColumn fx:id="numero" prefWidth="124.79998779296875" text="Numero Reservation" />
+                  <TableColumn fx:id="datereserv" prefWidth="102.39996337890625" text="Date Reservation" />
+                  <TableColumn fx:id="Vdep" prefWidth="84.79998779296875" text="VILLE DEPART" />
+                  <TableColumn fx:id="Varriv" minWidth="0.0" prefWidth="85.5999755859375" text="VILLE ARRIVE" />
+                  <TableColumn fx:id="heuredeb" prefWidth="87.20001220703125" text="HEURE DEBUT" />
+                  <TableColumn fx:id="libelllevoyage" prefWidth="103.99993896484375" text="LIBELLE Voyage" />
+                  <TableColumn fx:id="datedeb" prefWidth="78.4000244140625" text="Date Debut" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

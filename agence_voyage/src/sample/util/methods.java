@@ -24,4 +24,8 @@ public class methods {
 		alert.showAndWait();
 	}
 
+	public static boolean length_test(String text, int nbr_max){
+		if(text.length() > nbr_max) return true;
+		else return false;
+	}
 }

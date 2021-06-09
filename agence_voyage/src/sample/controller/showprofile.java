@@ -3,6 +3,7 @@ package sample.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,10 +19,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class showprofile {
+public class showprofile implements Initializable {
 
     @FXML
     private Button upd;
@@ -86,44 +89,7 @@ public class showprofile {
         }
         upl.setDisable(false);
     }
-    @FXML
-    private  void setDispl(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
 
-        pand.setVisible(true);
-        pand.setManaged(true);
-        if(DatabaseHandler.image(User.us)!=0) {
-            Image image = new Image("file:photo.jpg", 100, 150, true, true);
-            imv.setImage(image);
-            txtar.setText("");
-            imv.setPreserveRatio(true);
-        }
-        try {
-
-            User us= DatabaseHandler.userprofile(User.us);
-            Client cl=DatabaseHandler.clientprofile(User.us);
-            emai.setText(us.getEmail_user());
-            nom.setText(cl.getNom_client());
-            if(cl.getPrenom_client()!=null) {
-                prenom.setText(cl.getPrenom_client());
-            }
-            if(cl.getCin()!=null) {
-                cin.setText(cl.getCin());
-            }
-            if(cl.getTel_client()!=null) {
-                tel.setText(cl.getTel_client());
-            }
-            if(cl.getAdresse_client()!=null) {
-                adre.setText(cl.getAdresse_client());
-            }
-            if(cl.getCp_client()!=null) {
-                codeP.setText(cl.getCp_client());
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-            throw e;
-        }
-    }
     @FXML
     void clickup(javafx.event.ActionEvent actionEvent) throws IOException {
         upd.getScene().getWindow().hide();
@@ -193,4 +159,56 @@ public class showprofile {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        pand.setVisible(true);
+        pand.setManaged(true);
+        try {
+            if(DatabaseHandler.image(User.us)!=0) {
+                Image image = new Image("file:photo.jpg", 100, 150, true, true);
+                imv.setImage(image);
+                txtar.setText("");
+                imv.setPreserveRatio(true);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+
+            User us= DatabaseHandler.userprofile(User.us);
+            Client cl=DatabaseHandler.clientprofile(User.us);
+            emai.setText(us.getEmail_user());
+            nom.setText(cl.getNom_client());
+            if(cl.getPrenom_client()!=null) {
+                prenom.setText(cl.getPrenom_client());
+            }
+            if(cl.getCin()!=null) {
+                cin.setText(cl.getCin());
+            }
+            if(cl.getTel_client()!=null) {
+                tel.setText(cl.getTel_client());
+            }
+            if(cl.getAdresse_client()!=null) {
+                adre.setText(cl.getAdresse_client());
+            }
+            if(cl.getCp_client()!=null) {
+                codeP.setText(cl.getCp_client());
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+
+            try {
+                throw e;
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } catch (ClassNotFoundException classNotFoundException) {
+                classNotFoundException.printStackTrace();
+            }
+        }
+    }
+
+    public void setDispl(ActionEvent actionEvent) {
+    }
 }

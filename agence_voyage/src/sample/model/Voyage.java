@@ -25,6 +25,7 @@ public class Voyage {
     private String ville_depart;
     private String ville_arrive;
     public static ObservableList<voyage_info> list ;
+    public static  String id;
     public Voyage(int id_voyage) {
 		super();
 		this.id_voyage = id_voyage;
@@ -110,12 +111,13 @@ public class Voyage {
         connectionDB conn = new connectionDB();
         Connection connection = conn.getConnection();
 
-        String sql = "select id_voyage,libelle_voyage,date_debut,date_fin,heure_debut,heure_fin,voyages.id_bus,ville_depart,ville_arrive from  voyages,bus where voyages.id_bus=bus.id_bus and ( (ville_depart like '%" + villeD + "%' and  ville_arrive like '%" + villeA + "%' ) or date_debut like '%" + date + "%')";
+        String sql = "select id_voyage,libelle_voyage,date_debut,date_fin,heure_debut,heure_fin,voyages.id_bus,ville_depart,ville_arrive from  voyages,bus where voyages.id_bus=bus.id_bus and ( (ville_depart like '%" + villeD + "%' and  ville_arrive like '%" + villeA + "%' ) and date_debut like '%" + date + "%')";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
 
         ObservableList<voyage_info> liste = FXCollections.observableArrayList();
         while (res.next()) {
+            id = (res.getString("id_voyage"));
             liste.add(new voyage_info(res.getString("id_voyage"), res.getString("libelle_voyage"), res.getString("date_debut"),
                     res.getString("date_fin"), res.getString("heure_debut"), res.getString("heure_fin"), res.getString("id_bus"), res.getString("ville_depart"),
                     res.getString("ville_arrive")));

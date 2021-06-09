@@ -1,8 +1,6 @@
 package sample.controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,10 +12,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import sample.util.DatabaseHandler;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class LoginController {
    /* @FXML
@@ -43,23 +39,33 @@ public class LoginController {
         String uname = email.getText();
         String pass = password.getText();
         if (DatabaseHandler.CheckLoginUser(uname, pass)) { // sending data to databasehandler class to connection data
+            if (DatabaseHandler.checkreset(uname)){
+                forgot_password.getScene().getWindow().hide();
+                Stage dashboardStage = new Stage();
+                Parent root = FXMLLoader.load(getClass().getResource("../../../../../../Downloads/Compressed/TravelAgency-main/TravelAgency-main/agence_voyage/src/sample/view/passwordreset.fxml"));
+                Scene scene = new Scene(root);
+                dashboardStage.setScene(scene);
+                dashboardStage.show();
+            }
+           else {
             s=DatabaseHandler.retrieveIdUser(uname);
             User.us=s;
+            System.out.println(User.em=uname);
             if(!DatabaseHandler.retreiveIdadm(DatabaseHandler.retrieveIdUser(uname))){
             loginButton.getScene().getWindow().hide();
             Stage dashboardStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../view/mainClient.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../view/Dashboard.fxml"));
             Scene scene = new Scene(root);
             dashboardStage.setScene(scene);
             dashboardStage.show();}
             else {
                 loginButton.getScene().getWindow().hide();
                 Stage dashboardStage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("../view/confirmadm.fxml"));
-                Scene scene = new Scene(root,800, 700);
+                Parent root = FXMLLoader.load(getClass().getResource("../view/confirmadmin.fxml"));
+                Scene scene = new Scene(root,309, 278);
                 dashboardStage.setScene(scene);
                 dashboardStage.show();
-            }
+            }}
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
@@ -75,7 +81,22 @@ public class LoginController {
         cr.getScene().getWindow().hide();
         Stage dashboardStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../view/register.fxml"));
-        Scene scene = new Scene(root,800, 700);
+        Scene scene = new Scene(root,309, 278);
         dashboardStage.setScene(scene);
         dashboardStage.show();
-    }}
+    }
+
+    @FXML
+    private Button forgot_password;
+
+    @FXML
+    void forgot_password(ActionEvent event) throws IOException {
+
+        forgot_password.getScene().getWindow().hide();
+        Stage dashboardStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("../view/ResetPassword.fxml"));
+        Scene scene = new Scene(root,350, 260);
+        dashboardStage.setScene(scene);
+        dashboardStage.show();
+    }
+}

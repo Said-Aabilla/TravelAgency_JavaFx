@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/Compressed/mysql-connector-java-8.0.25/mysql-connector-java-8.0.25.jar!/" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-16/lib" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/jdk-16.0.1/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-16/lib" />
+      <root url="file://$USER_HOME$/Downloads/Compressed/jdk-16.0.1/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-16/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/jdk-16.0.1/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/javafx-sdk-16/lib" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/Compressed/jdk-16.0.1/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>

@@ -33,7 +33,7 @@ public class BilletController implements Initializable  {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try {
-            Mail.sendMail("said160aabilla@gmail.com");
+            Mail.sendMail("roxa4280@gmail.com");
             label.setText("Check your email to download the ticket !");
 
         } catch (Exception e) {

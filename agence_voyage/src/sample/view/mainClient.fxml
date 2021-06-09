@@ -12,41 +12,32 @@
    <children>
       <AnchorPane layoutX="14.0" layoutY="105.0" prefHeight="500.0" prefWidth="216.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane layoutX="8.0" layoutY="7.0" prefHeight="86.0" prefWidth="216.0" style="-fx-background-color: #e06100;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Label layoutX="31.0" layoutY="26.0" prefHeight="32.0" prefWidth="142.0" text="Agence de Voyage" textFill="WHITE">
-                     <font>
-                        <Font size="16.0" />
-                     </font></Label>
-               </children>
-            </Pane>
-            <Button fx:id="acc" alignment="BASELINE_LEFT" layoutX="19.0" layoutY="188.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Profile" textFill="WHITE" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="188.0">
-
-            </Button>
-            <Button fx:id="lesVoyages" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="145.0" mnemonicParsing="false" onAction="#AfficherChercher" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Accueil" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="145.0">
+            <Pane layoutX="8.0" layoutY="7.0" prefHeight="86.0" prefWidth="216.0" style="-fx-background-color: #e06100;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="lesVoyages" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="149.0" mnemonicParsing="false" onAction="#AfficherChercher" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Accueil" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="149.0">
                <font>
-                  <Font size="14.0" />
+                  <Font size="20.0" />
                </font></Button>
-            <Button fx:id="logout" alignment="BASELINE_LEFT" layoutX="19.0" layoutY="312.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Logout " textFill="WHITE" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="312.0">
+            <Button alignment="BASELINE_LEFT" layoutX="20.0" layoutY="238.0" mnemonicParsing="false" onAction="#lesreserv" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Les Reservations" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="238.0">
                <font>
-                  <Font size="14.0" />
+                  <Font size="20.0" />
                </font></Button>
-            <Button alignment="BASELINE_LEFT" layoutX="20.0" layoutY="228.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Les Reservations" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="228.0">
+            <Button alignment="BASELINE_LEFT" layoutX="20.0" layoutY="287.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Hotels" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="287.0">
                <font>
-                  <Font size="14.0" />
-               </font></Button>
-            <Button alignment="BASELINE_LEFT" layoutX="20.0" layoutY="274.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="176.0" style="-fx-background-color: transparent;" text="Hotels" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="274.0">
-               <font>
-                  <Font size="14.0" />
+                  <Font size="20.0" />
                </font></Button>
             <Separator layoutX="2.0" layoutY="85.0" prefHeight="3.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <Button layoutX="14.0" layoutY="189.0" mnemonicParsing="false" onAction="#profile" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+            <Button layoutX="26.0" layoutY="192.0" mnemonicParsing="false" onAction="#profile" prefHeight="45.0" prefWidth="125.0" style="-fx-background-color: transparent;" text="Profile" textAlignment="CENTER" textFill="#fffcfc">
                <font>
-                  <Font size="14.0" />
+                  <Font size="20.0" />
                </font></Button>
-            <Button fx:id="logout1" layoutX="20.0" layoutY="313.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: transparent;">
+            <Button fx:id="logout1" layoutX="56.0" layoutY="393.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="46.0" prefWidth="104.0" style="-fx-background-color: transparent;" text="Logout" textFill="WHITE">
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="aboutus" layoutX="50.0" layoutY="330.0" mnemonicParsing="false" onAction="#AboutUs" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: transparent;" text="About Us" textFill="#f7f7f7">
+               <font>
+                  <Font size="20.0" />
                </font>
             </Button>
          </children>
@@ -55,7 +46,7 @@
       <Pane layoutX="219.0" layoutY="-28.0" prefHeight="86.0" prefWidth="684.0" style="-fx-background-color: #000;" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="58.0" fitWidth="116.0" layoutX="548.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="170.0" layoutY="21.0" text="Welcome to TravelGo" textFill="WHITE">
+            <Label layoutX="22.0" layoutY="21.0" text="TravelGo" textFill="WHITE">
                <font>
                   <Font size="30.0" />
                </font></Label>
