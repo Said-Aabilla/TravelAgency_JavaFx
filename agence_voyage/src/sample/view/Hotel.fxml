@@ -9,16 +9,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.HotelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.HotelController">
    <children>
       <TextField fx:id="pd_hotel" layoutX="40.0" layoutY="90.0" prefHeight="27.0" prefWidth="212.0" promptText="Petite Description " style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="90.0" />
       <TextField fx:id="rp_hotel" layoutX="40.0" layoutY="150.0" prefHeight="27.0" prefWidth="212.0" promptText="Range Prix " style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="150.0" />
       <TextField fx:id="adr_hotel" layoutX="288.0" layoutY="71.0" prefHeight="27.0" prefWidth="212.0" promptText="Adresse de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="90.0" />
       <TextField fx:id="v_hotel" layoutX="40.0" layoutY="208.0" prefHeight="27.0" prefWidth="212.0" promptText="Ville de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="150.0" />
       <TextArea fx:id="des_hotel" layoutX="40.0" layoutY="200.0" prefHeight="116.0" prefWidth="212.0" promptText="Description de l'Hotel" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="200.0" />
-      <Pane layoutX="132.0" layoutY="-15.0" prefHeight="43.0" prefWidth="644.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Pane layoutX="132.0" layoutY="-15.0" prefHeight="43.0" prefWidth="644.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <Label layoutX="28.0" layoutY="12.0" text="Rechercher" textFill="WHITE">
                <font>
@@ -33,24 +36,45 @@
                   <Insets right="10.0" />
                </padding>
             </TextField>
-            <Button fx:id="chercher_hotel" layoutX="311.0" layoutY="10.0" mnemonicParsing="false" onAction="#chercher_hotel_click" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: white; -fx-background-radius: 5em;" text="Chercher" textFill="#e06100">
+            <Button fx:id="chercher_hotel" layoutX="311.0" layoutY="3.0" mnemonicParsing="false" onAction="#chercher_hotel_click" prefHeight="20.0" prefWidth="113.0" style="-fx-background-color: white; -fx-background-radius: 5em;" text="Chercher">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.8947742623533594">
+                           <color>
+                              <Color green="0.5402166247367859" blue="0.8700000047683716" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Button>
          </children>
       </Pane>
-      <Button fx:id="ajouter_hotel" layoutX="554.0" layoutY="75.0" mnemonicParsing="false" onAction="#ajouter_hotel_click" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Ajouter" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+      <Button fx:id="ajouter_hotel" layoutX="548.0" layoutY="78.0" mnemonicParsing="false" onAction="#ajouter_hotel_click" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: darkblue; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Ajouter" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="243.0" AnchorPane.topAnchor="78.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="modifier_hotel" layoutX="554.0" layoutY="117.0" mnemonicParsing="false" onAction="#modifier_hotel_click" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Modifier" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="110.0">
+      <Button fx:id="modifier_hotel" layoutX="771.0" layoutY="77.0" mnemonicParsing="false" onAction="#modifier_hotel_click" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: darkgreen; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Modifier" AnchorPane.leftAnchor="771.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="77.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="supprimer_hotel" layoutX="567.0" layoutY="162.0" mnemonicParsing="false" onAction="#supprimer_hotel_click" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Supprimer" AnchorPane.leftAnchor="550.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
+      <Button fx:id="supprimer_hotel" layoutX="662.0" layoutY="135.0" mnemonicParsing="false" onAction="#supprimer_hotel_click" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: darkred; -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Supprimer" AnchorPane.leftAnchor="662.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="135.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -65,12 +89,12 @@
             <TableColumn fx:id="v_col_hotel" prefWidth="127.199951171875" text="VILLE" />
          </columns>
       </TableView>
-      <Button fx:id="upload_hotel" layoutX="146.0" layoutY="351.0" mnemonicParsing="false" onAction="#upload_hotel_click" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Upload">
+      <Button fx:id="upload_hotel" layoutX="146.0" layoutY="351.0" mnemonicParsing="false" onAction="#upload_hotel_click" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Upload">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="browse_hotel" layoutX="48.0" layoutY="349.0" mnemonicParsing="false" onAction="#browse_hotel_click" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Browser">
+      <Button fx:id="browse_hotel" layoutX="48.0" layoutY="349.0" mnemonicParsing="false" onAction="#browse_hotel_click" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000); -fx-background-radius: 5px; -fx-text-fill: #fff;" text="Browser">
          <font>
             <Font size="14.0" />
          </font>

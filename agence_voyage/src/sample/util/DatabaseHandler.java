@@ -22,7 +22,7 @@ public class DatabaseHandler {
         Connection connection = null;
 
 
-        String dbUrl = "jdbc:mysql://localhost:3306/agence_voyage";
+        String dbUrl = "jdbc:mysql://localhost:3306/agence_voyage1";
         String user = "root";
         String pass = "";
         try {
@@ -178,7 +178,7 @@ public class DatabaseHandler {
         try (Connection conn = GetDatabaseConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, newPass);
-            pstmt.setString(2, "false");
+            pstmt.setString(2, "true");
             pstmt.setString(3, email);
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -467,7 +467,7 @@ public class DatabaseHandler {
 
     public static categories_bus getcategorie (String Id) throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
-        String selectStmt = "SELECT c.num_cb, c.libelle_cb, c.capacité_cb,c.price FROM categories_bus c,bus b WHERE b.id_bus = ? and b.num_cb = c.num_cb";
+        String selectStmt = "SELECT c.num_cb, c.libelle_cb, c.capacité_cb, c.price FROM categories_bus c,bus b WHERE b.id_bus = ? and b.num_cb = c.num_cb";
         categories_bus cat =null;
         //Execute SELECT statement
 

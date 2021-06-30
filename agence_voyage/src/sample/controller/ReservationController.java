@@ -34,8 +34,9 @@ public class ReservationController implements Initializable {
 
 	    @FXML
 	    private Label Categorie;
-	@FXML
-	private Label vdep;
+
+	    @FXML
+    	private Label vdep;
 
 	    @FXML
 	    private Label Prenom;
@@ -87,9 +88,9 @@ public class ReservationController implements Initializable {
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
-		    Client cl = new Client ();
+
 		    categories_bus category = new categories_bus();
-		    cl = DatabaseHandler.clientprofile(User.us);
+		    Client cl = DatabaseHandler.clientprofile(User.us);
 			try {
 				category = DatabaseHandler.getcategorie(ClientController.voy.getId_bus());
 			} catch (SQLException throwables) {

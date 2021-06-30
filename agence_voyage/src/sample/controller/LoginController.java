@@ -1,5 +1,8 @@
 package sample.controller;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -21,9 +24,8 @@ public class LoginController {
     @FXML
     private JFXPasswordField password;
     @FXML
-    private JFXButton loginButton;
-    @FXML*/
-   @FXML
+    private JFXButton loginButton;*/
+    @FXML
    private TextField email;
 
     @FXML
@@ -42,7 +44,7 @@ public class LoginController {
             if (DatabaseHandler.checkreset(uname)){
                 forgot_password.getScene().getWindow().hide();
                 Stage dashboardStage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("../../../../../../Downloads/Compressed/TravelAgency-main/TravelAgency-main/agence_voyage/src/sample/view/passwordreset.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("../view/passwordreset.fxml"));
                 Scene scene = new Scene(root);
                 dashboardStage.setScene(scene);
                 dashboardStage.show();
@@ -62,7 +64,7 @@ public class LoginController {
                 loginButton.getScene().getWindow().hide();
                 Stage dashboardStage = new Stage();
                 Parent root = FXMLLoader.load(getClass().getResource("../view/confirmadmin.fxml"));
-                Scene scene = new Scene(root,309, 278);
+                Scene scene = new Scene(root,411, 278);
                 dashboardStage.setScene(scene);
                 dashboardStage.show();
             }}
@@ -81,7 +83,7 @@ public class LoginController {
         cr.getScene().getWindow().hide();
         Stage dashboardStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../view/register.fxml"));
-        Scene scene = new Scene(root,309, 278);
+        Scene scene = new Scene(root,800, 700);
         dashboardStage.setScene(scene);
         dashboardStage.show();
     }

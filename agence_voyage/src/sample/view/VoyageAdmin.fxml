@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="415.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.VoyageController">
    <children>
-      <Pane layoutX="248.0" layoutY="34.0" prefHeight="45.0" prefWidth="684.0" style="-fx-background-color: #e06100;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Pane layoutX="248.0" layoutY="34.0" prefHeight="45.0" prefWidth="684.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <Label layoutX="22.0" layoutY="14.0" text="Rechercher Par :" textFill="WHITE">
                <font>
@@ -30,7 +30,7 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <Button fx:id="chercher_voyage" layoutX="633.0" layoutY="11.0" mnemonicParsing="false" onAction="#chercher_voyage_click" style="-fx-background-color: #fff; -fx-background-radius: 5em;" text="Chercher" textFill="#e06100">
+            <Button fx:id="chercher_voyage" layoutX="633.0" layoutY="5.0" mnemonicParsing="false" onAction="#chercher_voyage_click" style="-fx-background-color: #fff; -fx-background-radius: 5em;" text="Chercher" textFill="#005063">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -53,17 +53,17 @@
             <TableColumn fx:id="ha_col_voyage" prefWidth="106.40008544921875" text="HEURE ARRIVE" />
         </columns>
       </TableView>
-      <Button fx:id="ajouter_voyage" layoutX="563.0" layoutY="99.0" mnemonicParsing="false" onAction="#ajouter_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkblue;" text="Ajouter" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="120.0">
+      <Button fx:id="ajouter_voyage" layoutX="770.0" layoutY="119.0" mnemonicParsing="false" onAction="#ajouter_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkblue;" text="Ajouter" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="119.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="modifier_voyage" layoutX="573.0" layoutY="109.0" mnemonicParsing="false" onAction="#modifier_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkgreen;" text="Modifier" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="160.0">
+      <Button fx:id="modifier_voyage" layoutX="770.0" layoutY="165.0" mnemonicParsing="false" onAction="#modifier_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkgreen;" text="Modifier" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="165.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="supprimer_voyage" layoutX="583.0" layoutY="119.0" mnemonicParsing="false" onAction="#supprimer_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkred;" text="Supprimer" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="200.0">
+      <Button fx:id="supprimer_voyage" layoutX="770.0" layoutY="212.0" mnemonicParsing="false" onAction="#supprimer_voyage_click" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: darkred;" text="Supprimer" textFill="WHITE" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="212.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

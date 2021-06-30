@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -48,32 +50,32 @@
                         <Font size="14.0" />
                      </font>
                   </PasswordField>
-                  <Button fx:id="reg" layoutX="56.0" layoutY="355.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-radius: 5em;" text="S'Inscrire" textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="19.0">
+                  <Button fx:id="reg" layoutX="56.0" layoutY="355.0" mnemonicParsing="false" onAction="#signup" style="-fx-background-color: #005063; -fx-background-radius: 5em;" text="S'Inscrire" textFill="WHITE" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="19.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Label layoutX="112.0" layoutY="408.0" text="Or log in if you already an account !" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="-22.0">
+                  <Label layoutX="112.0" layoutY="408.0" prefHeight="17.0" prefWidth="207.0" style="-fx-text-fill: #005063;" text="Or log in if you already an account !" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="63.0">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <AnchorPane layoutX="59.0" layoutY="125.0" prefHeight="469.0" prefWidth="351.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000);; -fx-background-radius: 2em;" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="19.0">
+            <AnchorPane layoutX="59.0" layoutY="125.0" prefHeight="469.0" prefWidth="351.0" style="-fx-background-color: linear-gradient(to right top, #005063, #fff)linear-gradient(to right top, #005063, #fff); -fx-background-radius: 2em;" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="19.0">
                <children>
                   <VBox alignment="CENTER_LEFT" layoutX="68.0" prefHeight="208.0" prefWidth="215.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label text="#1" textFill="WHITE">
+                        <ImageView fitHeight="228.0" fitWidth="249.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/094-coconut-tree.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="251.0" text="JavaFX application " textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text="JavaFX application " textFill="WHITE">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label text="Agence de Voyage" textAlignment="CENTER" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="240.0" text="Agence de Voyage" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -81,7 +83,7 @@
                      </children>
                   </VBox>
                </children></AnchorPane>
-            <Button fx:id="log" layoutX="487.0" layoutY="473.0" mnemonicParsing="false" onAction="#goLog" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000); -fx-background-color: transparent;" text="Log in" textFill="#e82626" AnchorPane.leftAnchor="487.0" AnchorPane.rightAnchor="110.0">
+            <Button fx:id="log" layoutX="486.0" layoutY="480.0" mnemonicParsing="false" onAction="#goLog" style="-fx-background-color: #005063 #005063; -fx-background-radius: 5em;" text="Log in" textFill="WHITE" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="111.0">
                <font>
                   <Font size="14.0" />
                </font>

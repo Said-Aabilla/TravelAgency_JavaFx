@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="522.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.showprofile">
+<AnchorPane prefHeight="524.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.showprofile">
    <children>
       <Pane layoutX="37.0" layoutY="323.0" prefHeight="74.0" prefWidth="281.0" style="-fx-background-color: #f9f8e9; -fx-background-radius: 10px,5px,10px,5px;" />
-      <Pane layoutX="26.0" layoutY="27.0" prefHeight="74.0" prefWidth="648.0" style="-fx-background-color: linear-gradient(to right top, #974f00, #7b3418, #56211d, #2f1417, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+      <Pane layoutX="26.0" layoutY="27.0" prefHeight="51.0" prefWidth="910.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000);" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
          <children>
-            <Label layoutX="14.0" layoutY="13.0" text="Profile du Client" textFill="WHITE">
+            <Label layoutX="14.0" layoutY="2.0" text="Profile du Client" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -22,12 +22,12 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </Label>
-            <Button fx:id="delete" layoutX="635.0" layoutY="14.0" mnemonicParsing="false" onAction="#Del" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: red; -fx-background-radius: 5em; -fx-text-fill: #fff;" stylesheets="@style.css" text="Supprimer Compte">
+            <Button fx:id="delete" layoutX="686.0" layoutY="3.0" mnemonicParsing="false" onAction="#Del" prefHeight="32.0" prefWidth="135.0" style="-fx-background-color: red; -fx-background-radius: 5em; -fx-text-fill: #fff;" stylesheets="@style.css" text="Delete Account">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </Button>
-            <Button fx:id="upd" layoutX="407.0" layoutY="14.0" mnemonicParsing="false" onAction="#clickup" prefHeight="28.0" prefWidth="216.0" style="-fx-background-color: darkblue; -fx-background-radius: 5em; -fx-text-fill: #fff;" stylesheets="@style.css" text="Modifier Password">
+            <Button fx:id="upd" layoutX="542.0" layoutY="3.0" mnemonicParsing="false" onAction="#clickup" prefHeight="45.0" prefWidth="135.0" style="-fx-background-color: darkblue; -fx-background-radius: 5em; -fx-text-fill: #fff;" stylesheets="@style.css" text="Edit Password">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -52,7 +52,7 @@
          </children>
       </Pane>
       <Label fx:id="txtar" contentDisplay="CENTER" layoutX="40.0" layoutY="325.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.33" prefHeight="17.0" prefWidth="281.0" text="no file has been selected " textAlignment="CENTER" textFill="#560000" AnchorPane.topAnchor="325.0" />
-      <Button fx:id="update" layoutX="427.0" layoutY="450.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="191.0" style="-fx-background-color: green; -fx-background-radius: 5em; -fx-text-fill: #fff;" stylesheets="@style.css" text="Modifier Mes Infos" AnchorPane.leftAnchor="427.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="450.0">
+      <Button fx:id="update" layoutX="566.0" layoutY="449.0" mnemonicParsing="false" onAction="#update" prefHeight="45.0" prefWidth="190.0" style="-fx-background-color: green; -fx-background-radius: 5em; -fx-text-fill: #fff;" stylesheets="@style.css" text="Update info" AnchorPane.leftAnchor="566.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="449.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -63,7 +63,7 @@
          </font></TextField>
       <TextField fx:id="tel" layoutX="408.0" layoutY="296.0" prefHeight="27.0" prefWidth="200.0" promptText="Telephone du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="408.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="296.0" />
       <TextField fx:id="codeP" layoutX="408.0" layoutY="346.0" prefHeight="27.0" prefWidth="200.0" promptText="Code Postale du Client" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 0px 0px 2px;" AnchorPane.leftAnchor="408.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="346.0" />
-      <Button fx:id="brow" layoutX="40.0" layoutY="353.0" mnemonicParsing="false" onAction="#setBrow" prefHeight="17.0" prefWidth="126.0" style="-fx-background-color: #e06100;" stylesheets="@style.css" text="Browse" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="353.0">
+      <Button fx:id="brow" layoutX="40.0" layoutY="353.0" mnemonicParsing="false" onAction="#setBrow" prefHeight="17.0" prefWidth="126.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000);" stylesheets="@style.css" text="Browse" textFill="WHITE" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="353.0">
          <font>
             <Font size="17.0" />
          </font></Button>
@@ -71,40 +71,40 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button fx:id="upl" disable="true" layoutX="186.0" layoutY="353.0" mnemonicParsing="false" onAction="#setUpl" prefHeight="42.0" prefWidth="135.0" style="-fx-background-color: #e06100;" stylesheets="@style.css" text="update photo" textFill="WHITE" />
-      <Pane fx:id="pand" layoutX="340.0" layoutY="90.0" prefHeight="268.0" prefWidth="96.0" visible="false">
+      <Button fx:id="upl" disable="true" layoutX="186.0" layoutY="353.0" mnemonicParsing="false" onAction="#setUpl" prefHeight="42.0" prefWidth="135.0" style="-fx-background-color: linear-gradient(to right top, #005070, #005063, #005069, #005067, #000000);" stylesheets="@style.css" text="update photo" textFill="WHITE" />
+      <Pane fx:id="pand" layoutX="340.0" layoutY="90.0" prefHeight="343.0" prefWidth="96.0">
          <children>
-            <Label layoutX="11.0" layoutY="56.0" prefHeight="17.0" prefWidth="70.0" text="Nom">
+            <Label layoutY="63.0" prefHeight="17.0" prefWidth="70.0" text="Nom">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="14.0" prefHeight="17.0" prefWidth="70.0" text="CIN">
+            <Label layoutY="14.0" prefHeight="17.0" prefWidth="70.0" text="CIN">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="89.0" prefHeight="17.0" prefWidth="70.0" text="Prenom">
+            <Label layoutY="114.0" prefHeight="17.0" prefWidth="70.0" text="Prenom">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="128.0" prefHeight="17.0" prefWidth="70.0" text="E-mail">
+            <Label layoutY="163.0" prefHeight="17.0" prefWidth="70.0" text="E-mail">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="166.0" prefHeight="17.0" prefWidth="70.0" text="Adresse">
+            <Label layoutY="312.0" prefHeight="17.0" prefWidth="70.0" text="Adresse">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="205.0" prefHeight="17.0" prefWidth="70.0" text="Tel">
+            <Label layoutY="211.0" prefHeight="17.0" prefWidth="70.0" text="Tel">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="237.0" prefHeight="17.0" prefWidth="70.0" text="Code postal">
+            <Label layoutY="257.0" prefHeight="17.0" prefWidth="70.0" text="Code postal">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

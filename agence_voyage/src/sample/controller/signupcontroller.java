@@ -142,12 +142,12 @@ public class signupcontroller {
             showAlert(Alert.AlertType.CONFIRMATION,
                     "Retry!", "that email is already existed" );
         }
-        emai.setText("");
+      /*  emai.setText("");
         passw.setText("");
         numTel.setText("");
         passwCon.setText("");
         Cin.setText("");
-        name.setText("");
+        name.setText("");*/
 
 
 

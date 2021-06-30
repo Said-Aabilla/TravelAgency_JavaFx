@@ -69,7 +69,7 @@ public void setCapacite_cb(int capacite_cb) {
   public void ajouter_cb() throws SQLException {
 	  connectionDB con=new connectionDB();
       Connection connection=con.getConnection();
-     String sql="INSERT INTO categories_bus (libelle_cb, capecit�_cb) VALUES ('"+this.libelle_cb+"', "+this.capacite_cb+")";
+     String sql="INSERT INTO categories_bus (libelle_cb, capecité_cb) VALUES ('"+this.libelle_cb+"', "+this.capacite_cb+")";
 
       Statement stm=connection.createStatement();
       stm.executeUpdate(sql);
@@ -77,7 +77,7 @@ public void setCapacite_cb(int capacite_cb) {
   public void  modifier_cb() throws SQLException {
 	  connectionDB con=new connectionDB();
       Connection connection=con.getConnection();
-      String sql="update categories_bus set libelle_cb='"+this.libelle_cb+"', capacit�_cb="+this.capacite_cb+" where num_cb="+this.num_cb;
+      String sql="update categories_bus set libelle_cb='"+this.libelle_cb+"', capacité_cb="+this.capacite_cb+" where num_cb="+this.num_cb;
 
       Statement stm=connection.createStatement();
       stm.executeUpdate(sql);

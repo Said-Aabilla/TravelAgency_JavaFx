@@ -7,7 +7,7 @@ public class connectionDB {
     public Connection connection;
     public Connection getConnection(){
 
-        String dbname="agence_voyage";
+        String dbname="agence_voyage1";
         String username="root";
         String password="";
         try {
@@ -18,8 +18,6 @@ public class connectionDB {
         {
             e.printStackTrace();
         }
-
-
 
         return connection;
     }

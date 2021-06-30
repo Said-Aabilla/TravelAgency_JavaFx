@@ -1,5 +1,6 @@
 package sample.controller;
 
+import com.jfoenix.controls.JFXTextArea;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,8 +61,7 @@ public class Hotels implements Initializable {
     private Label pricelabel;
 
     @FXML
-    private Label desLabel;
-
+    private JFXTextArea desLabel;
     @FXML
     private Label adresselabel;
 
@@ -79,6 +79,7 @@ public class Hotels implements Initializable {
 
     @FXML
     void next(ActionEvent event) {
+        ++ index ;
         System.out.println(index);
         if (index < 0 ) {index = 1;}
 
@@ -90,7 +91,7 @@ public class Hotels implements Initializable {
             a.show();
         } else {
             desLabel.setText(descrip.getCellData(index));
-            shortdesclabel.setText(ShortDes.getCellData(index));
+           // shortdesclabel.setText(ShortDes.getCellData(index));
             pricelabel.setText(prix.getCellData(index));
             villelabel.setText(city.getCellData(index));
             adresselabel.setText(adrrss.getCellData(index));
@@ -98,10 +99,10 @@ public class Hotels implements Initializable {
             try {
                 if(  DatabaseHandler.image_hotel(Integer.parseInt(id.getCellData(index))) !=0)
                 {
-                    Image imag =new Image("file:photo.jpg",100,150,true,true);
+                    Image imag =new Image("file:photo.jpg",499,399,true,true);
                     imgView.setImage(imag);
-                    imgView.setFitWidth(100);
-                    imgView.setFitHeight(150);
+                    imgView.setFitWidth(499);
+                    imgView.setFitHeight(339);
                     imgView.setPreserveRatio(true);
                 }
 
@@ -111,7 +112,7 @@ public class Hotels implements Initializable {
                 e.printStackTrace();
             }
         }
-        index ++;
+
     }
 
     @FXML
@@ -126,17 +127,17 @@ public class Hotels implements Initializable {
             a.show();
         } else {
             desLabel.setText(descrip.getCellData(index));
-            shortdesclabel.setText(ShortDes.getCellData(index));
+            //shortdesclabel.setText(ShortDes.getCellData(index));
             pricelabel.setText(prix.getCellData(index));
             villelabel.setText(city.getCellData(index));
             adresselabel.setText(adrrss.getCellData(index));
             try {
                 if(  DatabaseHandler.image_hotel(Integer.parseInt(id.getCellData(index))) !=0)
                 {
-                    Image imag =new Image("file:photo.jpg",100,150,true,true);
+                    Image imag =new Image("file:photo.jpg",499,399,true,true);
                     imgView.setImage(imag);
-                    imgView.setFitWidth(100);
-                    imgView.setFitHeight(150);
+                    imgView.setFitWidth(499);
+                    imgView.setFitHeight(339);
                     imgView.setPreserveRatio(true);
                 }
 
@@ -153,7 +154,7 @@ public class Hotels implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
        table.setVisible(false);
         try {
-            list = hotel.get_hotel_client("Marrakech");
+            list = hotel.get_hotel_client("Agadir");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -172,7 +173,7 @@ public class Hotels implements Initializable {
             index = table.getItems().size();
             //remplis les labels
             descrip.setCellValueFactory(new PropertyValueFactory<hotel_infos, String>("description"));
-            ShortDes.setCellValueFactory(new PropertyValueFactory<hotel_infos, String>("short_description"));
+          //  ShortDes.setCellValueFactory(new PropertyValueFactory<hotel_infos, String>("short_description"));
             prix.setCellValueFactory(new PropertyValueFactory<hotel_infos, String>("prix_range"));
             city.setCellValueFactory(new PropertyValueFactory<hotel_infos, String>("ville"));
             adrrss.setCellValueFactory(new PropertyValueFactory<hotel_infos, String>("adresse"));
@@ -180,10 +181,10 @@ public class Hotels implements Initializable {
             try {
                 if(  DatabaseHandler.image_hotel(Integer.parseInt(id.getCellData(0))) !=0)
                 {
-                    Image imag =new Image("file:photo.jpg",100,150,true,true);
+                    Image imag =new Image("file:photo.jpg",499,339,true,true);
                     imgView.setImage(imag);
-                    imgView.setFitWidth(100);
-                    imgView.setFitHeight(150);
+                    imgView.setFitWidth(499);
+                    imgView.setFitHeight(339);
                     imgView.setPreserveRatio(true);
                 }
 
@@ -197,7 +198,7 @@ public class Hotels implements Initializable {
             //remplissage des libelle
 
             desLabel.setText(descrip.getCellData(0));
-            shortdesclabel.setText(ShortDes.getCellData(0));
+            //shortdesclabel.setText(ShortDes.getCellData(0));
             pricelabel.setText(prix.getCellData(0));
             villelabel.setText(city.getCellData(0));
             adresselabel.setText(adrrss.getCellData(0));

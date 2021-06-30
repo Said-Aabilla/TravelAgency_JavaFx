@@ -15,7 +15,7 @@ public class GeneratePDF {
     public static void generatePDF (String price, String DateDepa, String HourDepa, String VilleDepa, String VilleArriv) {
 
         try {
-           String filename = "C:\\Users\\DELL\\OneDrive\\Desktop\\travAGEN\\TravelAgency\\agence_voyage\\src\\sample\\Generated Billets\\Billet.pdf";
+           String filename = "C:\\Users\\user\\Desktop\\TravelAgency - Copy\\agence_voyage\\src\\sample\\Generated Billets\\Billet.pdf";
            Document document = new Document();
            PdfWriter.getInstance(document, new FileOutputStream(filename));
 

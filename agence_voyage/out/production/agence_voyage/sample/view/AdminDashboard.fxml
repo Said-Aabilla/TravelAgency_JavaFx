@@ -7,9 +7,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminDashboard">
+<AnchorPane prefHeight="624.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminDashboard">
    <children>
       <HBox alignment="BASELINE_CENTER" layoutX="-4.0" prefHeight="90.0" prefWidth="924.0" style="-fx-background-color: #d1f5ff;" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -108,100 +109,171 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </HBox>
-      <AnchorPane fx:id="wind" layoutX="30.0" layoutY="100.0" prefHeight="426.0" prefWidth="882.0" style="-fx-background-color: #f9f9f9;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+      <AnchorPane fx:id="wind" layoutX="30.0" layoutY="95.0" prefHeight="524.0" prefWidth="950.0" style="-fx-background-color: #f9f9f9;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
          <children>
-            <Button layoutX="120.0" layoutY="87.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="187.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="BUS" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="642.8">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/096-bus-1.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <Button layoutX="631.0" layoutY="87.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="187.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="CLIENTS" AnchorPane.rightAnchor="120.0">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/057-businessman.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="381.0" layoutY="87.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="187.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="HOTELS" AnchorPane.leftAnchor="380.0" AnchorPane.rightAnchor="380.0">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/089-hotel.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="126.0" layoutY="258.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="187.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="CHAUFFEURS">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/icons8-driver-96.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="637.0" layoutY="258.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="187.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="VOYAGES">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/069-map-4.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="387.0" layoutY="258.0" mnemonicParsing="false" prefHeight="113.0" prefWidth="187.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="VILLES">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/026-picture-1.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Label layoutX="134.0" layoutY="126.0" text="10">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="400.0" layoutY="126.0" text="5">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="134.0" layoutY="297.0" text="8">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="400.0" layoutY="297.0" text="11">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="666.0" layoutY="126.0" text="7">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="650.0" layoutY="296.0" text="6">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="257.0" layoutY="21.0" text="STATISTIQUES DE L'APPLICATION" textAlignment="CENTER" textFill="#00177b">
+            <Label layoutX="257.0" layoutY="25.0" text="STATISTIQUES DE L'APPLICATION" textAlignment="CENTER" textFill="#00177b">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
+            <VBox alignment="CENTER" layoutX="35.0" layoutY="88.0" prefHeight="300.0" prefWidth="250.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="310.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="BUS">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/096-bus-1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="269.0" text="10">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="290.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="CHAUFFEURS">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/icons8-driver-96.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="250.0" text="8">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="350.0" layoutY="96.0" prefHeight="300.0" prefWidth="250.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="272.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="CLIENTS">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/057-businessman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="38.0" prefWidth="250.0" text="12">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="266.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="HOTELS">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/089-hotel.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="40.0" left="10.0" right="10.0" top="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="269.0" text="8">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="657.0" layoutY="96.0" prefHeight="300.0" prefWidth="272.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="272.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="VOYAGES">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/069-map-4.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="55.0" prefWidth="276.0" text="20">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="272.0" style="-fx-background-color: #f0fcff;" stylesheets="@style.css" text="VILLES">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/user/Desktop/TravelAgency - Copy/agence_voyage/src/sample/view/images/026-picture-1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Label alignment="CENTER" prefHeight="3.0" prefWidth="272.0" text="9">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></VBox>
          </children></AnchorPane>
    </children>
 </AnchorPane>

@@ -25,8 +25,8 @@ public class Mail {
         propreties.put("mail.smtp.port", "587");
         propreties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
-        String myAccountEmail = "said.aabilla@gmail.com";
-        String password = "jp0N9KXcVb5Y";
+        String myAccountEmail = "abdelhadi12mouzafir@gmail.com";
+        String password = "896618AbdelhadiRoxMassar20192020@";
 
         Session session = Session.getInstance(propreties, new Authenticator() {
             @Override

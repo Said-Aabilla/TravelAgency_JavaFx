@@ -18,9 +18,9 @@
 .table-view .cell{ 
 	-fx-cell-size: 35;
 	-fx-alignment: center-left; 
-	-fx-background-color: #29292D;
-	 -fx-border-color: #29292D; 
-	 -fx-text-fill: lightgray; 
+	-fx-background-color: white;
+	 -fx-border-color:none;
+	 -fx-text-fill: black;
 	 -fx-alignment: CENTER_LEFT;
 }
 .table-row-cell:selected {

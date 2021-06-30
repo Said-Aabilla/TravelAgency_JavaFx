@@ -32,7 +32,7 @@ public class confirmadmin {
             confirm.getScene().getWindow().hide();
             Stage dashboardStage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("../view/AdminDashboard.fxml"));
-            Scene scene = new Scene(root, 800, 700);
+            Scene scene = new Scene(root, 950, 600);
             dashboardStage.setScene(scene);
             dashboardStage.show();
         }
